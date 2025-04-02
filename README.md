@@ -1,47 +1,177 @@
-# Svelte + TS + Vite
+<div id="top" align="center">
+<h1>rz-wc-lib</h1>
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+<p>Web Components library</p>
 
-## Recommended IDE Setup
+[Report Issue](https://github.com/Zheng-Bote/rz_wc-lib/issues) [Request Feature](https://github.com/Zheng-Bote/rz_wc-lib/pulls)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/rz_wc-lib)
 
-## Need an official Svelte framework?
+</div>
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+<hr>
 
-## Technical considerations
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Why use this over SvelteKit?**
+**Table of Contents**
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+- [Description](#description)
+  - [Features](#features)
+  - [Status](#status)
+    - [Application / Tool](#application--tool)
+    - [Documentation](#documentation)
+      - [README](#readme)
+      - [other Markdown files](#other-markdown-files)
+- [Installation](#installation)
+  - [Dependencies](#dependencies)
+  - [folder structure](#folder-structure)
+  - [Usage/Examples/Tests](#usageexamplestests)
+- [API Reference](#api-reference)
+  - [Inputs](#inputs)
+  - [Outputs](#outputs)
+  - [Parameters](#parameters)
+- [Documentation](#documentation-1)
+  - [Architecture](#architecture)
+    - [Github](#github)
+      - [Github Repo](#github-repo)
+      - [Github Actions / Workflows](#github-actions--workflows)
+  - [Application](#application)
+  - [DevOps](#devops)
+  - [Github Page](#github-page)
+  - [Github Wiki](#github-wiki)
+  - [Comments](#comments)
+  - [Screenshots](#screenshots)
+- [Authors and License](#authors-and-license)
+  - [License](#license)
+    - [MIT License](#mit-license)
+    - [Apache License](#apache-license)
+  - [Authors](#authors)
+    - [Code Contributors](#code-contributors)
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+<hr>
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+# Description
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+![HTML5](https://img.shields.io/badge/HTML-5+-E34F26?logo=html5)
+![Typescript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)
+![Svelte.js](https://img.shields.io/badge/Svelte-324FFF?logo=svelte)
+![CSS3](https://img.shields.io/badge/CSS3-663399?logo=css3)
 
-**Why include `.vscode/extensions.json`?**
+Web Components library
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## Features
 
-**Why enable `allowJs` in the TS template?**
+- \[ ] advanced-super-extra-special feature xyz
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+  <br>
 
-**Why is HMR not preserving my local component state?**
+- \[x] OSS and license
+- \[x] works as designed
+- \[ ] no bugs
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+<br>
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+- \[ ] runs on modern Browsers
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+# Status
+
+:arrow_right: <mark>:warning: still under construction :warning:</mark> :arrow_left:
+
+![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/rz_wc-lib)
+![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/rz_wc-lib)
+
+![Status](https://img.shields.io/badge/Status-under_construction-red)
+![Status](https://img.shields.io/badge/Status-works_as_designed-green)
+
+![GitHub Issues](https://img.shields.io/github/issues/Zheng-Bote/rz_wc-lib)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Zheng-Bote/rz_wc-lib)
+
+## folder structure
+
+<!-- readme-tree start -->
+
 ```
+.
+├── .github
+│   ├── actions
+│   │   └── doctoc
+│   │       ├── README.md
+│   │       ├── action.yml
+│   │       └── dist
+│   │           ├── index.js
+│   │           ├── index.js.map
+│   │           ├── licenses.txt
+│   │           └── sourcemap-register.js
+│   └── workflows
+│       ├── ghp-call_Readme.yml
+│       ├── ghp-create_doctoc.yml
+│       ├── ghp-markdown_index.yml
+│       ├── repo-actions_docu.yml
+│       ├── repo-call_Readme.yml
+│       ├── repo-create_doctoc.yml_
+│       ├── repo-create_doctoc_md.yml
+│       └── repo-create_tree_readme.yml
+├── LICENSE
+├── LICENSE_Apache-2
+├── LICENSE_GPL-2
+├── LICENSE_GPL-3
+├── LICENSE_MIT
+├── README.md
+└── tree.bak
+
+6 directories, 21 files
+```
+
+<!-- readme-tree end -->
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+# Authors and License
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) 2025 ZHENG Robert
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+        https://choosealicense.com/licenses/mit/
+
+## Authors
+
+- [![Zheng Robert](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)
+
+### Code Contributors
+
+![Contributors](https://img.shields.io/github/contributors/Zheng-Bote/rz_wc-lib?color=dark-green)
+
+[![Zheng Robert](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)
+
+<hr>
+
+:vulcan_salute:
+
+<p align="right">(<a href="#top">back to top</a>)</p>
