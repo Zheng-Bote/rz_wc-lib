@@ -1,7 +1,7 @@
 name: Repo - update Readme
 # author: Zheng Robert
 
-run-name: update README by ${{ github.actor }}
+run-name: update README.md by ${{ github.actor }}
 
 on:
   workflow_dispatch:

@@ -3,7 +3,7 @@ name: Repo - create Repo-Tree in README.md
 # README.md: <!-- readme-tree start --><!-- readme-tree end -->
 # https://github.com/RavelloH/readme-tree
 
-run-name: create Repo-Tree structure in README by ${{ github.actor }}
+run-name: creates Repo-Tree structure in README by ${{ github.actor }}
 
 on:
   workflow_dispatch:

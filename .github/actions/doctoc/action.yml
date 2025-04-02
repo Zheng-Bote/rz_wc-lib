@@ -1,5 +1,5 @@
 name: TOC Generator
-description: GitHub Action to generate TOC in Markdown files.
+description: GitHub Action to generate Table of Contents in Markdown files.
 author: Zheng Robert
 
 branding:

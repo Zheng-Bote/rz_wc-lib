@@ -4,7 +4,7 @@ name: Repo - add Actions In/Out to README
 # https://github.com/tj-actions/auto-doc
 # author: Zheng-Bote
 
-run-name: render actions.yml Inputs/Outputs to README tables by ${{ github.actor }}
+run-name: renders actions.yml Inputs/Outputs to README tables by ${{ github.actor }}
 
 on:
   push:
