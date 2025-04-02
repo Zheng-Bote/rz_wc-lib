@@ -95,7 +95,6 @@ Web Components library
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -117,17 +116,51 @@ Web Components library
 │       ├── repo-create_doctoc.yml_
 │       ├── repo-create_doctoc_md.yml
 │       └── repo-create_tree_readme.yml
+├── .gitignore
+├── .vscode
+│   └── extensions.json
 ├── LICENSE
-├── LICENSE_Apache-2
-├── LICENSE_GPL-2
-├── LICENSE_GPL-3
-├── LICENSE_MIT
 ├── README.md
-└── tree.bak
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   └── img
+│       ├── icons
+│       │   ├── dontpanic.svg
+│       │   ├── favicon.ico
+│       │   ├── glasses-outline.svg
+│       │   ├── home-outline.svg
+│       │   ├── information-outline.svg
+│       │   ├── language-outline.svg
+│       │   ├── log-in-outline.svg
+│       │   ├── mail-open-outline.svg
+│       │   ├── moon-outline.svg
+│       │   ├── nok.svg
+│       │   ├── ok.svg
+│       │   ├── search-outline.svg
+│       │   ├── sunny-outline.svg
+│       │   └── sync-outline.svg
+│       └── zheng_bote.svg
+├── src
+│   ├── App.svelte
+│   ├── app.css
+│   ├── lib
+│   │   ├── Counter.svelte
+│   │   ├── rz-fontsize.svelte
+│   │   ├── rz-header.svelte
+│   │   └── rz-theme.svelte
+│   ├── main.ts
+│   └── vite-env.d.ts
+├── svelte.config.js
+├── tree.bak
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 
-6 directories, 21 files
+12 directories, 50 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
