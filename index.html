@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>rz-wc-lib</title>
+
+    <meta name="description" content="template for HTML5" />
+    <meta name="version" content="v0.1.0" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <!--
+    <meta name="theme-color" content="#eef2f3" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#8e9eab"
+    /> -->
+
+    <!-- <link rel="preconnect" href="https://www.hase-zheng.net" /> -->
+
+    <link rel="alternate icon" href="/img/icons/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      href="/img/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" type="image/svg+xml" href="/img/icons/favicon.svg" />
+
+    <style>
+      :root {
+        color-scheme: light dark;
+        --font-color: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
+        --font-color-header: light-dark(
+          oklch(0% 0 0),
+          oklch(95.84% 0.004 214.33)
+        );
+
+        --background-color: light-dark(
+          oklch(95.84% 0.004 214.33),
+          oklch(69.09% 0.026 242.51)
+        );
+      }
+      body {
+        background-size: 100vw 100vh;
+        height: 100%;
+
+        background-color: var(--background-color);
+        color: var(--font-color);
+        padding: calc(var(--base-padding) * 4);
+      }
+
+      html[data-theme="light"] {
+        background-color: var(--background-color);
+        transition: background-color 0.5s ease;
+        color: var(--font-color);
+      }
+
+      html[data-theme="dark"] {
+        background-color: var(--background-color);
+        transition: background-color 0.5s ease;
+        color: var(--font-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <main>
+      <h2>Text</h2>
+      <p class="txt">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+        ipsum dolor sit amet.
+      </p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
