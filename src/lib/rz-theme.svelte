@@ -82,5 +82,6 @@ function checkMode() {
   button:hover {
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
+    cursor: pointer;
   }
 </style>

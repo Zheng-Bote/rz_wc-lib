@@ -89,6 +89,8 @@ function onSmall() {
   button:hover {
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
+    cursor: pointer;
+  
   }
 
   .dropbtn {
@@ -102,6 +104,7 @@ function onSmall() {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  
 }
 
 .dropdown-content {
@@ -111,16 +114,16 @@ function onSmall() {
   min-width: 35px;
 
   z-index: 1;
-  .fs_small {
+  & .fs_small {
     font-size: 13px;
   }
-  .fs_medium {
+  & .fs_medium {
     font-size: 16px;
   }
-  .fs_large {
+  & .fs_large {
     font-size: 18px;
   }
-  .fs_xlarge {
+  & .fs_xlarge {
     font-size: 24px;
   }
 }

@@ -10,7 +10,12 @@ export default defineConfig({
         "src/lib/rz-header.svelte",
         "src/lib/rz-fontsize.svelte",
         "src/lib/rz-theme.svelte",
+        "src/lib/rz-footer.svelte",
       ],
+      output: {
+        chunkFileNames: "assets/[name].js",
+        entryFileNames: "assets/[name].js",
+      },
       external: ["svelte"],
     },
   },

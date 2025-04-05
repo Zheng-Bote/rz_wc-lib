@@ -15,13 +15,16 @@
   --font-size-small-dynamic: clamp(0.6rem, 0.7rem, 0.8rem);
   --font-size-responsive: calc(2vw + 1em);
 
-  --font-color-light: oklch(95.84% 0.004 214.33);
-  --font-color-dark: oklch(0% 0 0);
+  --font-color: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
   --font-color-header: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
+  --font-color-footer: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
 
-  --background-color-light: oklch(95.84% 0.004 214.33);
-  --background-color-dark: oklch(69.09% 0.026 242.51);
+  --background-color: light-dark(
+    oklch(95.84% 0.004 214.33),
+    oklch(69.09% 0.026 242.51)
+  );
   --background-color-header: lightblue;
+  --background-color-footer: lightblue;
 
   --red-color: oklch(62.8% 0.25768330773615683 29.2338851923426);
   --yellow-color: oklch(96.8% 0.21100590772552355 109.76923207652125);
@@ -59,65 +62,16 @@ body {
   background-size: 100vw 100vh;
   height: 100%;
 
-  background-color: var(--background-color-light);
-  color: var(--font-color-dark);
-  /*padding: calc(var(--base-padding) * 4);*/
+  background-color: var(--background-color);
+  color: var(--font-color);
+  /*padding: calc(var(--base-padding) * 4); */
 }
 
-header {
-  background-color: var(--background-color-header);
-}
-
-main {
-  padding: calc(var(--base-padding) * 4);
-}
-
-.txt {
-  max-width: 70ch;
-  padding: 3em 1em;
-  margin: auto;
-  line-height: 1.75;
-  border: var(--border-width) var(--border-style) var(--border-color);
-}
-
-html[data-theme="light"] {
-  body {
-    background-color: var(--background-color-light);
-    transition: background-color 0.5s ease;
-    color: var(--font-color-dark);
-
-    .left {
-      color: black;
-    }
-  }
-}
-
-html[data-theme="dark"] {
-  body {
-    background-size: 100vw 100vh;
-    height: 100%;
-    background-color: var(--background-color-dark);
-    transition: background-color 0.5s ease;
-
-    color: var(--font-color-light);
-
-    .left {
-      color: black;
-    }
-  }
-  header {
-    background-color: var(--background-color-light);
-  }
-}
-
-@media screen and (min-width: 640px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  html {
-    font-size: 18px;
+.brand {
+  opacity: 0.9;
+  img {
+    vertical-align: middle;
+    width: 25px;
+    height: auto;
   }
 }
