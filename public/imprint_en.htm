@@ -1,0 +1,170 @@
+<style>
+  :host {
+    --background-color: oklch(86.69% 0 0);
+    --border-color: oklch(59.99% 0 0);
+
+    --font-family: "Inter", -apple-system, BlinkMacSystemFont, Roboto, Ubuntu,
+      "Segeo UI", "Helvetica Neue", Arial, sans-serif;
+    --font-color: oklch(0% 0 0);
+    --font-size: 16px;
+
+    --blue-color: oklch(55.08% 0.139 245.43);
+    --dark-blue-color: oklch(45.2% 0.131 251.01);
+    --light-blue-color: oklch(85.62% 0.049 219.65);
+  }
+
+  article,
+  section {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    padding: 10px;
+  }
+  article {
+    margin: auto;
+    width: fit-content;
+  }
+  section {
+    margin-bottom: 10px;
+    max-width: 100ch;
+    min-width: 300px;
+    padding: 20px;
+
+    & ul,
+    ol {
+      padding-left: 20px;
+    }
+  }
+
+  .img_small {
+    width: 200px;
+    height: auto;
+  }
+  .img_mdeium {
+    width: 300px;
+    height: auto;
+  }
+  .img_big {
+    width: 400px;
+    height: auto;
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    color: var(--blue-color);
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: var(--dark-blue-color);
+  }
+  a[href^="https"] {
+    padding-right: 1em;
+    background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpolygon%20fill%3D%22blue%22%20points%3D%222%2C2%205%2C2%205%2C3%203%2C3%203%2C9%209%2C9%209%2C7%2010%2C7%2010%2C10%202%2C10%22/%3E%3Cpolygon%20points%3D%226.2%2C2%2010%2C2%2010%2C5.8%208.6%2C4.4%206.5%2C6.5%205.5%2C5.5%207.6%2C3.4%22/%3E%3C/svg%3E")
+      no-repeat right;
+    background-size: 11px auto;
+  }
+  a[href^="mailto"] {
+    padding-right: 1.2em;
+    background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22blue%22%20d%3D%22M1%2C4%20h10%20v6%20h-10z%20l10%2C6m0%2C-6%20l-10%2C6%22/%3E%3C/svg%3E")
+      no-repeat right;
+    background-size: 1rem auto;
+  }
+</style>
+
+<article>
+  <h1>Legal Notice</h1>
+  <p>
+    <mark><b>-- private website --</b></mark>
+  </p>
+  <br />
+  <section>
+    <h2>Represented by:</h2>
+    <p>ZHENG Robert</p>
+
+    <h3>Responsible for Content:</h3>
+    <p>ZHENG Robert</p>
+    <p>VAT ID: --/--</p>
+
+    <h3>postal address</h3>
+    <img
+      src="/img/rz-address_postal.png"
+      class="img_medium"
+      alt="imprint contact"
+      title="Imprint Contactdata"
+    />
+    <br />
+
+    <h3>E-Mail</h3>
+    <img class="img_small" src="/img/rz-address_mail.svg" alt="mailadress" />
+    <br />
+
+    <h3>QR-Code</h3>
+    <img class="img_small" src="/img/rz-qr-code.svg" alt="mailadress" />
+    <br />
+
+    <h3>see also</h3>
+    <a href="https://www.robert.hase-zheng.net/about"
+      >https://www.robert.hase-zheng.net/about</a
+    >
+  </section>
+  <section>
+    <h2>Regulatory Authority</h2>
+    <p>Germany/Bavaria/Munich</p>
+    <p>
+      This Legal Notice complies with the German laws under § 5 TMG and § 55
+      RStV.
+    </p>
+  </section>
+
+  <section>
+    <h2>Liability for Content</h2>
+    <p>
+      The contents of our website have been created with the greatest possible
+      care. However, we cannot guarantee the contents' accuracy, completeness,
+      or topicality. According to Section 7, paragraph 1 of the TMG
+      (Telemediengesetz - German Telemedia Act), we as service providers are
+      liable for our content on these pages by general laws. However, according
+      to Sections 8 to 10 of the TMG, we service providers are not obliged to
+      monitor external information transmitted or stored or investigate
+      circumstances pointing to illegal activity. Obligations to remove or block
+      the use of information under general laws remain unaffected. However, a
+      liability in this regard is only possible from the moment of knowledge of
+      a specific infringement. Upon notification of such violations, we will
+      remove the content immediately.
+    </p>
+  </section>
+  <section>
+    <h2>Liability for Links</h2>
+    <p>
+      Our website contains links to external websites, over whose contents we
+      have no control. Therefore, we cannot accept any liability for these
+      external contents. The respective provider or operator of the websites is
+      always responsible for the contents of the linked pages. The linked pages
+      were checked for possible legal violations at the time of linking. Illegal
+      contents were not identified at the time of linking. However, permanent
+      monitoring of the contents of the linked pages is not reasonable without
+      specific indications of a violation. Upon notification of violations, we
+      will remove such links immediately.
+    </p>
+  </section>
+  <section>
+    <h2>Copyright</h2>
+    <p>
+      The contents and works on these pages created by the site operator are
+      subject to German copyright law. The duplication, processing,
+      distribution, and any kind of utilization outside the limits of copyright
+      require the written consent of the respective author or creator. Downloads
+      and copies of these pages are only permitted for private, non-commercial
+      use. In so far as the contents on this site were not created by the
+      operator, the copyrights of third parties are respected. In particular,
+      third-party content is marked as such. Should you become aware of a
+      copyright infringement, please inform us accordingly. Upon notification of
+      violations, we will remove such contents immediately.
+    </p>
+  </section>
+  <br />
+  <p><small>Last Updated: 12/2023</small></p>
+</article>

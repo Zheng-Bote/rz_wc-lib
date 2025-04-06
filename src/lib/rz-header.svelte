@@ -3,6 +3,7 @@
 <script lang="ts">
 import RzFontsize from './rz-fontsize.svelte';
 import RzTheme from './rz-theme.svelte';
+import RzLanguage from './rz-language.svelte';
 
 export let brand_img: string = "/img/icons/home-outline.svg";
 export let brand_title: string = "Home";
@@ -26,7 +27,7 @@ function goToLogin() {
       </span>
       <span class="right">
          <button onclick="{goToLogin}"><img src="/img/icons/log-in-outline.svg" alt="login" title="login"></button>
-        <button><img src="/img/icons/language-outline.svg" alt="DE|EN" title="DE|EN" ></button>
+        <RzLanguage></RzLanguage>
         <RzTheme></RzTheme>
         <RzFontsize></RzFontsize>
       </span>

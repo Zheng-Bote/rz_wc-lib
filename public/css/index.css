@@ -26,9 +26,10 @@
   --background-color-header: lightblue;
   --background-color-footer: lightblue;
 
+  --info-color: oklch(0.86 0.0489 219.65); /* light-blue */
   --red-color: oklch(62.8% 0.25768330773615683 29.2338851923426);
   --yellow-color: oklch(96.8% 0.21100590772552355 109.76923207652125);
-  --green-color: oklch(86.8% 0.156 144.09);
+  --green-color: oklch(0.81 0.156 144.09);
 
   --base-margin: 5px;
   --base-padding: 5px;
@@ -74,4 +75,10 @@ body {
     width: 25px;
     height: auto;
   }
+}
+
+.rz-datetime {
+  color: lightgreen;
+  background-color: black;
+  padding: 2px;
 }

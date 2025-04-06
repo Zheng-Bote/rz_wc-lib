@@ -3,10 +3,20 @@
   import Counter from './lib/Counter.svelte'
   import RzHeader from './lib/rz-header.svelte';
   import RzFooter from './lib/rz-footer.svelte';
+  import RzModal from './lib/rz-modal.svelte';
+  import RzImprint from './lib/rz-imprint.svelte';
+  import RzDatetime from './lib/rz-datetime.svelte';
+  
+  const languageChannel = new BroadcastChannel("language_channel");
+
+languageChannel.onmessage = function (event) {
+  console.log("languageChannel.onmessage = ", event.data);
+};
   
 </script>
 
 <RzHeader brand_title="Hello World"></RzHeader>
+
 
 <div class="content">
 
@@ -16,7 +26,20 @@
     <Counter />
   </div>
  
+  <br>
+
 <main>
+
+<h2>Modal</h2>
+<RzModal color="green" footer="me"></RzModal>
+
+<h2>Imprint</h2>
+<RzImprint></RzImprint>
+
+<h2>Datetime</h2>
+<RzDatetime tz="Asia/Shanghai" format="en-GB"></RzDatetime>
+
+<br>
       <h2>Text</h2>
       <p class="txt">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy

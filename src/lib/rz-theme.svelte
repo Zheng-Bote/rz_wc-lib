@@ -20,9 +20,7 @@ function  handleToggle() {
 
     document.documentElement.setAttribute("data-theme", currentMode);
     localStorage.setItem("theme", currentMode);
-    console.info("handleToggle: ", currentMode);
-
-
+    //console.info("handleToggle: ", currentMode);
 }
 
 function checkMode() {
@@ -62,8 +60,8 @@ function checkMode() {
 <button onclick={handleToggle}>
       <img
         src={icon}
-        alt="toogle light Mode"
-        title="toogle light Mode"
+        alt="dark|light"
+        title="dark|light"
         width="15px"
         height="auto"
         id="darkM"

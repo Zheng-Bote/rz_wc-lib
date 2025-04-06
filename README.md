@@ -58,7 +58,7 @@
 
 ![HTML5](https://img.shields.io/badge/HTML-5+-E34F26?logo=html5)
 ![Typescript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)
-![Svelte.js](https://img.shields.io/badge/Svelte-324FFF?logo=svelte)
+![Svelte.js](https://img.shields.io/badge/Svelte-5-324FFF?logo=svelte)
 ![CSS3](https://img.shields.io/badge/CSS3-663399?logo=css3)
 
 Web Components library
@@ -95,6 +95,7 @@ Web Components library
 ## folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -161,6 +162,7 @@ Web Components library
 
 12 directories, 50 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

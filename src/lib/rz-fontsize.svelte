@@ -33,12 +33,12 @@ function onSmall() {
 </div>
 -->
 <div class="dropdown">
-  <button class="dropbtn"><img src="/img/icons/glasses-outline.svg" alt=""></button>
+  <button class="dropbtn"><img src="/img/icons/glasses-outline.svg" alt="fontsize" title="fontsize"></button>
   <div class="dropdown-content">
-    <button class="fs_small" onclick={onSmall}>S</button>
-    <button class="fs_medium" onclick={onMedium}>M</button>
-    <button class="fs_large" onclick={onLarge}>L</button>
-    <button class="fs_xlarge" onclick={onXlarge}>XL</button>
+    <button class="fs_small" onclick={onSmall} title="Small">S</button>
+    <button class="fs_medium" onclick={onMedium} title="Medium">M</button>
+    <button class="fs_large" onclick={onLarge} title="Large">L</button>
+    <button class="fs_xlarge" onclick={onXlarge} title="X-Large">XL</button>
   </div>
 </div>
 
