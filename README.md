@@ -95,7 +95,6 @@ Web Components library
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -126,30 +125,43 @@ Web Components library
 ├── package-lock.json
 ├── package.json
 ├── public
-│   └── img
-│       ├── icons
-│       │   ├── dontpanic.svg
-│       │   ├── favicon.ico
-│       │   ├── glasses-outline.svg
-│       │   ├── home-outline.svg
-│       │   ├── information-outline.svg
-│       │   ├── language-outline.svg
-│       │   ├── log-in-outline.svg
-│       │   ├── mail-open-outline.svg
-│       │   ├── moon-outline.svg
-│       │   ├── nok.svg
-│       │   ├── ok.svg
-│       │   ├── search-outline.svg
-│       │   ├── sunny-outline.svg
-│       │   └── sync-outline.svg
-│       └── zheng_bote.svg
+│   ├── css
+│   │   └── index.css
+│   ├── img
+│   │   ├── icons
+│   │   │   ├── dontpanic.svg
+│   │   │   ├── favicon.ico
+│   │   │   ├── glasses-outline.svg
+│   │   │   ├── home-outline.svg
+│   │   │   ├── information-outline.svg
+│   │   │   ├── language-outline.svg
+│   │   │   ├── log-in-outline.svg
+│   │   │   ├── mail-open-outline.svg
+│   │   │   ├── moon-outline.svg
+│   │   │   ├── nok.svg
+│   │   │   ├── ok.svg
+│   │   │   ├── search-outline.svg
+│   │   │   ├── sunny-outline.svg
+│   │   │   └── sync-outline.svg
+│   │   ├── rz-address_mail.svg
+│   │   ├── rz-address_mail_white.svg
+│   │   ├── rz-address_postal.png
+│   │   ├── rz-qr-code.svg
+│   │   └── zheng_bote.svg
+│   ├── imprint_de.htm
+│   ├── imprint_en.htm
+│   └── index.html
 ├── src
 │   ├── App.svelte
-│   ├── app.css
 │   ├── lib
 │   │   ├── Counter.svelte
+│   │   ├── rz-datetime.svelte
 │   │   ├── rz-fontsize.svelte
+│   │   ├── rz-footer.svelte
 │   │   ├── rz-header.svelte
+│   │   ├── rz-imprint.svelte
+│   │   ├── rz-language.svelte
+│   │   ├── rz-modal.svelte
 │   │   └── rz-theme.svelte
 │   ├── main.ts
 │   └── vite-env.d.ts
@@ -160,9 +172,8 @@ Web Components library
 ├── tsconfig.node.json
 └── vite.config.ts
 
-12 directories, 50 files
+13 directories, 62 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
