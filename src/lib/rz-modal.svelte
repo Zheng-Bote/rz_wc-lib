@@ -1,7 +1,7 @@
 <svelte:options customElement="rz-modal" /> 
 
 <script lang="ts">
-  import { onMount,  onDestroy } from 'svelte';
+  import { onMount,  onDestroy } from "svelte";
 
   export let title: string = "Salute";
   export let body: string ="Hello World 你好世界 Hola Mundo Привет мир Hallo Welt!";

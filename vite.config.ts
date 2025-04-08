@@ -15,16 +15,17 @@ export default defineConfig({
         "src/lib/rz-modal.svelte",
         "src/lib/rz-imprint.svelte",
         "src/lib/rz-datetime.svelte",
+        "src/lib/rz-breadcrumbs.js",
+        "src/lib/rz-online.svelte",
+        "src/lib/rz-button-top.svelte",
+        "src/lieb/rz-loginform.svelte",
       ],
       output: {
         chunkFileNames: "assets/[name].js",
         entryFileNames: "assets/[name].js",
       },
-      external: ["svelte"],
+      external: [svelte()],
     },
   },
   plugins: [svelte()],
-  compilerOptions: {
-    customElement: true,
-  },
 });

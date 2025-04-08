@@ -33,7 +33,7 @@ function onSmall() {
 </div>
 -->
 <div class="dropdown">
-  <button class="dropbtn"><img src="/img/icons/glasses-outline.svg" alt="fontsize" title="fontsize"></button>
+  <button class="dropbtn"><img src="img/icons/glasses-outline.svg" alt="fontsize" title="fontsize"></button>
   <div class="dropdown-content">
     <button class="fs_small" onclick={onSmall} title="Small">S</button>
     <button class="fs_medium" onclick={onMedium} title="Medium">M</button>

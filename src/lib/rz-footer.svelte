@@ -30,7 +30,7 @@ function getYearString() {
   <div class="footer-item-left" id="footer_item_left">
         <a href="{url_left}" title="{url_left_title}" >
           <img
-            src="/img/icons/mail-open-outline.svg"
+            src="img/icons/mail-open-outline.svg"
             width="15px"
             alt="{url_left_title}"
             title="{url_left_title}"
@@ -46,7 +46,7 @@ function getYearString() {
       <div class="footer-item-right" id="footer_item_right">
         <a href="{url_right}" title="{url_right_title}">
           <img
-            src="/img/icons/information-outline.svg"
+            src="img/icons/information-outline.svg"
             width="15px"
             alt="{url_right_title}"
             title="{url_right_title}"

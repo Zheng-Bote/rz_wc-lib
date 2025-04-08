@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>rz-wc-lib</title>
+    <title>test2</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -35,24 +35,18 @@
     <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
     <script type="module" src="/dist/assets/rz-datetime.js"></script>
     <script type="module" src="/dist/assets/rz-imprint.js"></script>
-    <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
   </head>
   <body>
     <rz-header></rz-header>
     <rz-breadcrumbs></rz-breadcrumbs>
+    <br />
 
-    <span id="top"></span>
-    <div id="rz_button_top">
-      <rz-button-top></rz-button-top>
-    </div>
-
-    <main>
-      <rz-datetime></rz-datetime>
-      <br />
-      <rz-imprint></rz-imprint>
-    </main>
-
+    <br />
+    <rz-datetime></rz-datetime>
+    <br />
+    <rz-imprint></rz-imprint>
+    <br />
     <rz-footer></rz-footer>
 
     <script>
@@ -61,7 +55,5 @@
         console.log("myChannel.onmessage = ", event.data);
       };
     </script>
-
-    <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
   </body>
 </html>

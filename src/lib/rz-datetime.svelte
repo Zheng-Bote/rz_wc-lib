@@ -61,4 +61,4 @@ function getDT() {
   }
 </script>
 
-<span class="rz-datetime">{getDT()}</span>
+<span class="rz-datetime"><time datetime="{getDT()}">{getDT()}</time></span>

@@ -1,7 +1,7 @@
 <svelte:options customElement="rz-language" /> 
 
 <script lang="ts">
-import { onMount,  onDestroy } from 'svelte';
+import { onMount } from "svelte";
 
 const languages = [
   { code: "en", name: "English", short: "EN" },
@@ -31,7 +31,7 @@ function getBrowserLocales() {
 
   if (browserLocales) {
     const lang = browserLocales[0].split(/-|_/)[0];
-    console.info("browserLocale: ", lang);
+    //console.info("browserLocale: ", lang);
     if(shortLanguages.includes(lang)) {
       return lang;
     } else {
@@ -45,7 +45,7 @@ function setLanguage() {
   language = getBrowserLocales();
   language = localStorage.getItem("language") || language;
   localStorage.setItem("language", language);
-  return language;
+  //return language;
 }
 
 function toggleLanguage() {
@@ -62,20 +62,19 @@ function toggleLanguage() {
   sendBroadCast(language);
 }
 
+
 onMount(() => {
 		//console.log('the component has mounted');
     setLanguage();
 });
 
-onDestroy(() => {
-	//console.log('the component is being destroyed');
-});
 
 </script>
 
 
 <span class="language">
-  <button onclick="{toggleLanguage}"><img src="/img/icons/language-outline.svg" alt="{languages[1].short}|{languages[0].short}" title="{languages[1].short}|{languages[0].short}" ></button>
+
+  <button onclick="{toggleLanguage}"><img src="img/icons/language-outline.svg" alt="{languages[1].short}|{languages[0].short}" title="{languages[1].short}|{languages[0].short}" ></button>
 </span>
 
 <style>

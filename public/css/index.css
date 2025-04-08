@@ -82,3 +82,13 @@ body {
   background-color: black;
   padding: 2px;
 }
+
+main {
+  margin: 10px;
+}
+
+.ende {
+  background-color: red;
+  margin: 50px;
+  padding: 50px;
+}

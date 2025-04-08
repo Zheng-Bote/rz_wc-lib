@@ -3,8 +3,8 @@
 <script lang="ts">
 
 let currentMode: string = "";
-let dark: string = "/img/icons/moon-outline.svg";
-let light: string = "/img/icons/sunny-outline.svg";
+let dark: string = "img/icons/moon-outline.svg";
+let light: string = "img/icons/sunny-outline.svg";
 let icon: string = "";
 
 function  handleToggle() {

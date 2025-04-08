@@ -5,13 +5,13 @@ import RzFontsize from './rz-fontsize.svelte';
 import RzTheme from './rz-theme.svelte';
 import RzLanguage from './rz-language.svelte';
 
-export let brand_img: string = "/img/icons/home-outline.svg";
+export let brand_img: string = "img/icons/home-outline.svg";
 export let brand_title: string = "Home";
 
-export let login_url: string = "/login.html";
+export let login_url: string = "login.html";
 
 function goToHome() {
-  window.location.href = "/";
+  window.location.href = "./";
 }
 
 function goToLogin() {
@@ -26,7 +26,7 @@ function goToLogin() {
         &nbsp;{brand_title}
       </span>
       <span class="right">
-         <button onclick="{goToLogin}"><img src="/img/icons/log-in-outline.svg" alt="login" title="login"></button>
+         <button onclick="{goToLogin}"><img src="img/icons/log-in-outline.svg" alt="login" title="login"></button>
         <RzLanguage></RzLanguage>
         <RzTheme></RzTheme>
         <RzFontsize></RzFontsize>
