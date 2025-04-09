@@ -24,7 +24,7 @@
     <link rel="alternate icon" href="img/icons/favicon.ico" />
     <link
       rel="shortcut icon"
-      href="/img/icons/favicon.ico"
+      href="img/icons/favicon.ico"
       type="image/x-icon"
     />
     <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
@@ -34,8 +34,8 @@
     <script type="module" src="/dist/assets/rz-header.js"></script>
     <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
     <script type="module" src="/dist/assets/rz-datetime.js"></script>
-    <script type="module" src="/dist/assets/rz-imprint.js"></script>
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
+    <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
   </head>
   <body>
@@ -46,14 +46,14 @@
     <div id="rz_button_top">
       <rz-button-top></rz-button-top>
     </div>
+    <rz-cookie-alert></rz-cookie-alert>
 
     <main>
-      <rz-datetime></rz-datetime>
-      <br />
-      <rz-imprint></rz-imprint>
+      <p><rz-datetime></rz-datetime></p>
+      <p><a href="test1/">test1</a></p>
     </main>
 
-    <rz-footer></rz-footer>
+    <rz-footer url_right="/dist/legal.html"></rz-footer>
 
     <script>
       const myChannel = new BroadcastChannel("language_channel");

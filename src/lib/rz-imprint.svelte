@@ -66,7 +66,7 @@ async function getImprint(){
 </script>
 
 
-<button onclick="{getImprint}">Get Imprint</button><br/>
+<!-- <button onclick="{getImprint}">Get Imprint</button><br/> -->
 
 <div class="rz-imprint">
   <div class="rz-imprint-content" use:doIt>

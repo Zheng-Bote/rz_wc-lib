@@ -1,40 +1,150 @@
 <svelte:options customElement="rz-loginform" />
 
 <script lang="ts">
+    import { onMount } from 'svelte';
 
+  export let login_url: string = 'http://localhost:8080/get_json';
+  let csrf_cookie: string = 'csrf_cookie';
+  let csrfCookie: any;
+  let csrfInput:any;
+
+  let password:string;
+  let username:string;
+
+  let errorMsg:string;
+
+  let isLoading:boolean = false;
+  let isSuccess:boolean = false;
+  let hasResponseError:boolean = false;
+
+  const handleSubmit = () => {
+
+    csrfCookie = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith(csrf_cookie));
+    if (csrfCookie) {
+      console.info("onMount csrfCookie");
+      const csrfValue = csrfCookie.split('=')[1];
+      csrfCookie = csrfValue;
+      console.info("onMount csrfCookie", csrfCookie);
+      csrfInput = document.getElementById('csrf_cookie') as HTMLInputElement;
+      if (csrfInput) {
+        csrfInput.value = csrfValue;
+      }
+    }
+
+
+    console.info(`username -${username}- pwd -${password}- cookie -${csrfCookie}-`);
+    isLoading = true;
+
+    if(csrfCookie === "" || csrfCookie === "undefined") {
+      csrfCookie = "empty";
+      console.info("csrfCookie 0: ", csrfCookie);
+    }
+
+    const data = {user: username, "pwd": password, "token": csrfCookie};
+    const jsonData =   JSON.stringify(data);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const response = fetch(login_url, {
+	    method: 'POST', 
+      headers: headers,
+      body: jsonData
+    })
+    .then(response => {
+      if (!response.ok) {
+        errorMsg = `System Error: ${response.status}. Please contact your Support.`;
+        hasResponseError = true;
+        isLoading = false;
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(responseData => {
+      isSuccess = true;
+      isLoading = false;
+      return responseData;  
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      errorMsg = `System Error: ${error}. Please contact your Support.`;
+      hasResponseError = true;
+      isLoading = false;
+    });
+
+
+  };
+
+
+  onMount(() => {
+    //document.cookie = "csrf_cookie=John Doe; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+    csrfCookie = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith(csrf_cookie));
+    if (csrfCookie) {
+      const csrfValue = csrfCookie.split('=')[1];
+      csrfCookie = csrfValue;
+      csrfInput = document.getElementById('csrf_cookie') as HTMLInputElement;
+      if (csrfInput) {
+        csrfInput.value = csrfValue;
+      }
+    }
+  });
 </script>
 
 
 <div class="rz-loginform">
-  <form class="form" action="#" method="post">
-    <input type="hidden" name="csrf_cookie" id="csrf_cookie" value="" />
-    <fieldset class="account_details">
-      <legend>Login</legend>
-      <label for="username">Username:</label>
-      <input
-        type="email"
-        name="username"
-        id="username"
-        placeholder="Username"
-        autocomplete="username"
-        title="Please enter a valid email address"
-        required
-        minlength="3"
-      />
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-        autocomplete="current-password"
-        required
-        minlength="8"
-      />
+  <form class="form" on:submit|preventDefault={handleSubmit}>
+    {#if isSuccess}
+      <div class="success">
+        <img src="img/icons/ok.svg" alt="ok" />
+        &nbsp;
+        You've been successfully logged in.
+      </div>
+    {:else}
+      <input type="hidden" name="csrf_cookie" id="csrf_cookie" value="" />
+      <fieldset class="account_details">
+        <legend>Login</legend>
+        <label for="username">Username:</label>
+        <input
+          type="email"
+          name="username"
+          id="username"
+          placeholder="Username"
+          autocomplete="username"
+          title="Please enter a valid email address"
+          required
+          minlength="3"
+          bind:value={username}
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+          minlength="8"
+          bind:value={password}
+        />
 
-    <button type="submit" name="btn_submit" id="btn_submit">
-      Login
-    </button>    </fieldset>
+        <button type="submit" name="btn_submit" id="btn_submit">
+          {#if isLoading}Logging in...<div class="dots"><div></div><div></div><div></div></div>
+          {:else}
+          Log in 🔒
+          {/if}
+        </button>
+        {#if hasResponseError}
+          <div class="error">
+            <img src="img/icons/nok.svg" alt="not ok" />
+            &nbsp;
+            {errorMsg}
+          </div>
+        {/if}
+      </fieldset>
+    {/if}
   </form>
 </div>
 
@@ -93,12 +203,65 @@
     padding: 10px;
     border: none;
     outline: none;
-    background-color: grey;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
    }
    button:hover {
     cursor: pointer;
-   }
+  }
+
+  .success, .error {
+    text-align:center;
+    text-wrap: pretty;
+    & img {
+      width: 15px;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+  .success {
+    color: var(--green-color);
+  }
+  .error {
+    color: var(--red-color);
+  }
+
+  /* spinner */
+  .dots {
+        width: 3.5em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+      }
+
+      .dots div {
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: #fc2f70;
+        animation: fade 0.8s ease-in-out alternate infinite;
+      }
+
+      .dots div:nth-of-type(1) {
+        background-color: oklch(0.97 0.211 109.77);
+        animation-delay: -0.4s;
+      }
+
+      .dots div:nth-of-type(2) {
+        background-color: oklch(0.52 0.176858 142.4953);
+        animation-delay: -0.2s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
 }
 
 </style>

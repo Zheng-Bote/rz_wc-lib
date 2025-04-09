@@ -6,6 +6,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: [
+        "src/lib/rz-breadcrumbs.js",
+        "src/lib/rz-cookie-alert.js",
         "src/lib/Counter.svelte",
         "src/lib/rz-header.svelte",
         "src/lib/rz-fontsize.svelte",
@@ -15,10 +17,9 @@ export default defineConfig({
         "src/lib/rz-modal.svelte",
         "src/lib/rz-imprint.svelte",
         "src/lib/rz-datetime.svelte",
-        "src/lib/rz-breadcrumbs.js",
         "src/lib/rz-online.svelte",
         "src/lib/rz-button-top.svelte",
-        "src/lieb/rz-loginform.svelte",
+        "src/lib/rz-loginform.svelte",
       ],
       output: {
         chunkFileNames: "assets/[name].js",

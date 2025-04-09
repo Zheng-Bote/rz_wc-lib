@@ -11,6 +11,7 @@
   import RzLoginForm from './lib/rz-loginform.svelte';
   
   
+  
   const languageChannel = new BroadcastChannel("language_channel");
   languageChannel.onmessage = function (event) {
     console.log("languageChannel.onmessage = ", event.data);
