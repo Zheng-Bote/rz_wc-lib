@@ -37,6 +37,8 @@
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
+
+    <script src="/dist/js/i18n.js"></script>
   </head>
   <body>
     <rz-header></rz-header>
@@ -48,6 +50,7 @@
     </div>
     <rz-cookie-alert></rz-cookie-alert>
 
+    <h1 data-i18n-key="app-title">App-Title</h1>
     <main>
       <p><rz-datetime></rz-datetime></p>
       <p><a href="test1/">test1</a></p>
@@ -59,6 +62,7 @@
       const myChannel = new BroadcastChannel("language_channel");
       myChannel.onmessage = function (event) {
         console.log("myChannel.onmessage = ", event.data);
+        setLocale(event.data);
       };
     </script>
 

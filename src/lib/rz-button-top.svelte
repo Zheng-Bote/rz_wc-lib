@@ -3,8 +3,27 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  let goto_msg_en = "goto top";
+  let goto_msg_de = "nach oben";
+  let goto_msg:string = goto_msg_en;
+
   function goToTop() {
     window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+  }
+
+  function setLanguage(){
+    let language = localStorage.getItem("language") || "en";
+  
+    switch(language){
+      case "de":{
+        goto_msg = goto_msg_de;
+        break;
+      }
+      default:{
+        goto_msg = goto_msg_en;
+        break;
+      }
+    }
   }
 
   onMount(() => {
@@ -38,7 +57,7 @@
 
 
 <p>
-  <button id="btn_gototop" title="goto top" onclick={goToTop}>
+  <button id="btn_gototop" title="{goto_msg}" onclick={goToTop} onfocus="{setLanguage}" onmouseover={setLanguage}>
     &uArr;&nbsp;top
   </button>
 </p>

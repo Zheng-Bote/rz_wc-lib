@@ -35,5 +35,18 @@
     <div id="app"></div>
 
     <script type="module" src="/src/main.ts"></script>
+
+    <h1 data-i18n-key="app-title">App-Title</h1>
+    <p><br /></p>
+    <p><br /></p>
+    <script src="/js/i18n.js"></script>
+
+    <script>
+      const myChannel = new BroadcastChannel("language_channel");
+      myChannel.onmessage = function (event) {
+        console.log("myChannel.onmessage = ", event.data);
+        setLocale(event.data);
+      };
+    </script>
   </body>
 </html>

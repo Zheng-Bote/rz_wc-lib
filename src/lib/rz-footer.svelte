@@ -23,9 +23,10 @@ function getYearString() {
 
     return years;
   }
+
 </script>
 
-
+<span class="distance"></span>
 <footer id="footer">
   <div class="footer-item-left" id="footer_item_left">
         <a href="{url_left}" title="{url_left_title}" >
@@ -59,6 +60,10 @@ function getYearString() {
 
 
 <style>
+  .distance {
+    margin-top: 20px;
+  }  
+  
   footer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);

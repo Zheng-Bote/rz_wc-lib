@@ -1,6 +1,8 @@
 <svelte:options customElement="rz-header" /> 
 
 <script lang="ts">
+  import { onMount } from 'svelte';
+
 import RzFontsize from './rz-fontsize.svelte';
 import RzTheme from './rz-theme.svelte';
 import RzLanguage from './rz-language.svelte';
@@ -10,6 +12,14 @@ export let brand_title: string = "Home";
 
 export let login_url: string = "login.html";
 
+  let login_en = "Login";
+  let login_de = "Anmeldung";
+  let login:string = login_en;
+
+  let goto_main_en = "goto mainpage";
+  let goto_main_de = "zur Haupstseite";
+  let goto_main:string = goto_main_en;
+
 function goToHome() {
   window.location.href = "./";
 }
@@ -17,16 +27,37 @@ function goToHome() {
 function goToLogin() {
   window.location.href = login_url;
 }
+
+  function setLanguage(){
+    let language = localStorage.getItem("language") || "en";
+  
+    switch(language){
+      case "de":{
+        login = login_de;
+        goto_main = goto_main_de;
+        break;
+      }
+      default:{
+        login = login_en;
+        goto_main = goto_main_en;
+        break;
+      }
+    }
+  }
+
+  onMount(() => {
+    setLanguage();
+  });
 </script>
 
 <header id="header">
   <nav id="nav">
-      <span class="left brand" onclick="{goToHome}" aria-hidden="true">
-        <img src="{brand_img}" alt="Home" title="Home"/>
+      <span class="left brand" onclick="{goToHome}" onfocus="{setLanguage}" onmouseover={setLanguage} aria-hidden="true" title="{goto_main}">
+        <img src="{brand_img}" alt="{goto_main}" title="{goto_main}"/>
         &nbsp;{brand_title}
       </span>
       <span class="right">
-         <button onclick="{goToLogin}"><img src="img/icons/log-in-outline.svg" alt="login" title="login"></button>
+         <button onclick="{goToLogin}" onfocus="{setLanguage}" onmouseover={setLanguage}><img src="img/icons/log-in-outline.svg" alt="{login}" title="{login}"></button>
         <RzLanguage></RzLanguage>
         <RzTheme></RzTheme>
         <RzFontsize></RzFontsize>

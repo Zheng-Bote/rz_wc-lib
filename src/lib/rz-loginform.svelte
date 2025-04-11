@@ -1,21 +1,88 @@
 <svelte:options customElement="rz-loginform" />
 
 <script lang="ts">
-    import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
 
   export let login_url: string = 'http://localhost:8080/get_json';
   let csrf_cookie: string = 'csrf_cookie';
   let csrfCookie: any;
   let csrfInput:any;
-
-  let password:string;
-  let username:string;
-
-  let errorMsg:string;
+  
+  let password:string = "";
+  let username:string = "";
+  let errorMsg:string = "";
 
   let isLoading:boolean = false;
   let isSuccess:boolean = false;
   let hasResponseError:boolean = false;
+
+  let user_en = "Username";
+  let user_de = "Benutzername";
+  let user:string = user_en;
+
+  let msg_email_en = "Please enter a valid email address";
+  let msg_email_de = "Bitte tragen Sie eine gültige email Addresse ein";
+  let msg_email:string = msg_email_en;
+
+  let msg_support_en = "Please contact your Support";
+  let msg_support_de = "Bitte wenden Sie sich an Ihren IT-Support";
+  let msg_support:string = msg_support_en;
+
+
+  let error_en = "Error";
+  let error_de = "Fehler";
+  let error: string = error_en;
+
+  let logged_in_en = "You've been successfully logged in";
+  let logged_in_de = "Sie wurden erfolgreich angemeldet";
+  let logged_in = logged_in_en;
+
+  let login_en = "Login";
+  let login_de = "Anmeldung";
+  let login:string = login_en;
+
+  let log_in_en = "log-in";
+  let log_in_de = "anmelden";
+  let log_in:string = log_in_en;
+
+  let pwd_en = "Password";
+  let pwd_de = "Passwort";
+  let pwd:string = pwd_en;
+
+  let msg_pwd_en = "Please enter your password";
+  let msg_pwd_de = "Bitte tragen Sie Ihr Passwort ein";
+  let msg_pwd:string = msg_pwd_en;
+
+    function setLanguage(){
+    let language = localStorage.getItem("language") || "en";
+  
+    switch(language){
+      case "de":{
+        user = user_de;
+        msg_email = msg_email_de;
+        msg_support = msg_support_de;
+        error = error_de;
+        logged_in = logged_in_de;
+        login = login_de;
+        pwd = pwd_de;
+        msg_pwd = msg_pwd_de;
+        log_in = log_in_de;
+        break;
+      }
+      default:{
+        user = user_en;
+        msg_email = msg_email_en;
+        msg_support = msg_support_en;
+        error = error_en;
+        logged_in = logged_in_en;
+        login = login_en;
+        pwd = pwd_en;
+        msg_pwd = msg_pwd_en;
+        log_in = log_in_en;
+        break;
+      }
+    }
+  }
 
   const handleSubmit = () => {
 
@@ -54,10 +121,10 @@
     })
     .then(response => {
       if (!response.ok) {
-        errorMsg = `System Error: ${response.status}. Please contact your Support.`;
+        errorMsg = `System ${error}: ${response.status}. ${msg_support}.`;
         hasResponseError = true;
         isLoading = false;
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP ${error}! status: ${response.status}`);
       }
       return response.json();
     })
@@ -68,7 +135,7 @@
     })
     .catch(error => {
       console.error('Error:', error);
-      errorMsg = `System Error: ${error}. Please contact your Support.`;
+      errorMsg = `System ${error}: ${error}. ${msg_support}.`;
       hasResponseError = true;
       isLoading = false;
     });
@@ -79,6 +146,7 @@
 
   onMount(() => {
     //document.cookie = "csrf_cookie=John Doe; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+    setLanguage();
     csrfCookie = document.cookie
       .split('; ')
       .find((row) => row.startsWith(csrf_cookie));
@@ -100,40 +168,40 @@
       <div class="success">
         <img src="img/icons/ok.svg" alt="ok" />
         &nbsp;
-        You've been successfully logged in.
+        {logged_in}.
       </div>
     {:else}
       <input type="hidden" name="csrf_cookie" id="csrf_cookie" value="" />
       <fieldset class="account_details">
-        <legend>Login</legend>
-        <label for="username">Username:</label>
+        <legend>{login}</legend>
+        <label for="username">{user}:</label>
         <input
           type="email"
           name="username"
           id="username"
-          placeholder="Username"
           autocomplete="username"
-          title="Please enter a valid email address"
+          title="{msg_email}"
           required
           minlength="3"
           bind:value={username}
         />
-        <label for="password">Password:</label>
+        <label for="password">{pwd}:</label>
         <input
           type="password"
           name="password"
           id="password"
-          placeholder="Password"
           autocomplete="current-password"
+          title="{msg_pwd}"
           required
           minlength="8"
           bind:value={password}
         />
 
         <button type="submit" name="btn_submit" id="btn_submit">
-          {#if isLoading}Logging in...<div class="dots"><div></div><div></div><div></div></div>
+          {#if isLoading}
+            {login}...<div class="dots"><div></div><div></div><div></div></div>
           {:else}
-          Log in 🔒
+          {log_in} 🔒
           {/if}
         </button>
         {#if hasResponseError}
@@ -167,6 +235,7 @@
 
   legend, label {
     font-size: var(--font-size-small);
+    opacity: var(--opacity-05);
   }
   legend {
     padding: var(--base-padding);

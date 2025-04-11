@@ -1,3 +1,11 @@
+const locale_en = "en";
+const locale_de = "de";
+
+const cookieText_de =
+  'Auch diese Webseite mag Cookies...<small><a href="https://de.wikipedia.org/wiki/HTTP-Cookie" title="Wikipedia: https://de.wikipedia.org/wiki/HTTP-Cookie">Wikipedia</a></small>';
+const cookieText_en =
+  'This website also likes cookies...<small><a href="https://en.wikipedia.org/wiki/HTTP_cookie" title="Wikipedia: https://en.wikipedia.org/wiki/HTTP-Cookie">Wikipedia</a></small>';
+
 const styleRules = `
 .container {
 	margin: 0 auto;
@@ -49,8 +57,13 @@ function getCookie(cname) {
 class RzCookieAlert extends HTMLElement {
   constructor() {
     super();
-    this._message =
-      'Auch diese Webseite mag Cookies...<small><a href="/stdsystem/imprint#cookies" title="Impressum" style="color:rgb(255, 255, 255);">Details siehe: Impressum</a></small>';
+    this.locale_en = "en";
+    this.locale_de = "de";
+    this.language = localStorage.getItem("language") || locale_en;
+    this.language === "en"
+      ? (this._message = this.locale_en)
+      : (this._message = this.locale_de); //_language;
+
     this.attachShadow({ mode: "open" });
   }
 

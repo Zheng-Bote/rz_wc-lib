@@ -1,8 +1,52 @@
 <svelte:options customElement="rz-fontsize" /> 
 
 <script lang="ts">
+import { onMount } from "svelte";
 
-function onSmall() {
+  let locale_en:string = "en";
+  let locale_de:string = "de";
+  let language:string = "";  
+  
+  let small:string, medium:string, large:string, xlarge:string = "";
+
+  let fontsize_en = "Fontsize";
+  let fontsize_de = "Schriftgröße";
+  let fontsize:string = fontsize_en;
+
+  let small_en:string = "small font";
+  let medium_en:string ="medium font";
+  let large_en:string = "large font";
+  let xlarge_en:string = "x-large font";
+
+  let small_de:string = "kleine Schrift";
+  let medium_de:string ="mittlere Schrift";
+  let large_de:string = "große Schrift";
+  let xlarge_de:string = "sehr große Schrift";
+
+  function setLanguage(){
+    language = localStorage.getItem("language") || locale_en;
+  
+    switch(language){
+      case "de":{
+        small = small_de;
+        medium = medium_de;
+        large = large_de;
+        xlarge = xlarge_de;
+        fontsize = fontsize_de;
+        break;
+      }
+      default:{
+        small = small_en;
+        medium = medium_en;
+        large = large_en;
+        xlarge = xlarge_en;
+        fontsize = fontsize_en;
+        break;
+      }
+    }
+  }
+
+  function onSmall() {
     let htmlRoot = document.getElementsByTagName("html")[0];
     htmlRoot.style.fontSize = "small";
   }
@@ -21,6 +65,11 @@ function onSmall() {
     let htmlRoot = document.getElementsByTagName("html")[0];
     htmlRoot.style.fontSize = "x-large";
   }
+
+  onMount(() => {
+    setLanguage();
+  });
+
 </script>
 
 <!--
@@ -33,12 +82,12 @@ function onSmall() {
 </div>
 -->
 <div class="dropdown">
-  <button class="dropbtn"><img src="img/icons/glasses-outline.svg" alt="fontsize" title="fontsize"></button>
+  <button class="dropbtn" onclick={setLanguage} onfocus="{setLanguage}" onmouseover={setLanguage}><img src="img/icons/glasses-outline.svg" alt="{fontsize}" title="{fontsize}"></button>
   <div class="dropdown-content">
-    <button class="fs_small" onclick={onSmall} title="Small">S</button>
-    <button class="fs_medium" onclick={onMedium} title="Medium">M</button>
-    <button class="fs_large" onclick={onLarge} title="Large">L</button>
-    <button class="fs_xlarge" onclick={onXlarge} title="X-Large">XL</button>
+    <button class="fs_small" onclick={onSmall} title="{small}">S</button>
+    <button class="fs_medium" onclick={onMedium} title="{medium}">M</button>
+    <button class="fs_large" onclick={onLarge} title="{large}">L</button>
+    <button class="fs_xlarge" onclick={onXlarge} title="{xlarge}">XL</button>
   </div>
 </div>
 
