@@ -19,12 +19,9 @@
   --font-color-header: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
   --font-color-footer: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
 
-  --background-color: light-dark(
-    oklch(95.84% 0.004 214.33),
-    oklch(69.09% 0.026 242.51)
-  );
-  --background-color-header: lightblue;
-  --background-color-footer: lightblue;
+  --background-color: light-dark(#cae5ff, #6f8ab7);
+  --background-color-header: #89bbfe;
+  --background-color-footer: #89bbfe;
 
   --info-color: oklch(0.86 0.0489 219.65); /* light-blue */
   --red-color: oklch(62.8% 0.25768330773615683 29.2338851923426);
@@ -35,13 +32,13 @@
   --base-padding: 5px;
   --transparency: rgb(0 0 0 / 0);
 
-  --border-color: oklch(0% 0 0);
+  --border-color: #89bbfe;
   --border-style: solid;
   --border-width: 1px;
   --border-radius: 5px;
 
   --primary-color: lightblue;
-  --secondary-color: lightblue;
+  --secondary-color: #89bbfe;
 
   --opacity-05: 0.5;
   --opacity-09: 0.9;
@@ -90,11 +87,49 @@ body {
 }
 
 main {
-  margin: 10px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "aside" "content" "aside_right";
+  grid-template-rows: auto;
+  padding: 10px;
 }
 
-.ende {
-  background-color: red;
+aside {
+  grid-area: aside;
+  text-align: center;
+}
+
+.aside_nav {
+  display: block;
+  text-align: left;
+}
+
+.content {
+  grid-area: content;
+}
+
+.aside_right {
+  grid-area: aside_right;
+  text-align: center;
+}
+
+.the-end {
   margin: 50px;
   padding: 50px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 5px 0 5px 0;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid: "aside content aside_right" 100% / 120px 1fr 300px;
+    grid-template-columns: 150px 1fr 300px;
+    grid-template-rows: 100%;
+  }
 }

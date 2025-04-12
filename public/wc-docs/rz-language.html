@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>rz-wc-lib</title>
+    <title>rz-language</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -37,12 +37,21 @@
 
     <script type="module" src="/dist/assets/rz-header.js"></script>
     <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
-    <script type="module" src="/dist/assets/rz-datetime.js"></script>
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
 
     <script src="/dist/js/i18n.js"></script>
+
+    <style>
+      .the_clock {
+        margin-left: 25px;
+      }
+      rz-datetime {
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+    </style>
   </head>
   <body>
     <rz-header></rz-header>
@@ -60,24 +69,51 @@
         <span class="aside_nav">
           <h5>Navigation</h5>
           <br />
-          <p><a href="wc-docs/rz-breadcrumbs.html">Breadcrumbs</a></p>
-          <p><a href="wc-docs/rz-datetime.html">Clocks</a></p>
-          <p><a href="wc-docs/rz-fontsize.html">Fontsize</a></p>
-          <p><a href="wc-docs/rz-footer.html">Footer</a></p>
-          <p><a href="wc-docs/rz-header.html">Header</a></p>
-          <p><a href="wc-docs/rz-language.html">Languages</a></p>
-          <p><a href="wc-docs/rz-loginform.html">Login</a></p>
-          <p><a href="wc-docs/rz-modal.html">Modal</a></p>
-          <p><a href="wc-docs/rz-theme.html">Themes</a></p>
+          <p><a href="#">ref_to</a></p>
         </span>
       </aside>
       <div class="content">
-        <h1>Web-Components</h1>
+        <h1>web-components</h1>
+        <p><br /></p>
+
+        <h2>rz-language</h2>
+        <p></p>
+
+        <h3>Syntax</h3>
+        <span class="coding">
+          <code>
+            <pre>&lt;rz-language&gt; &lt;rz-language/&gt;</pre>
+          </code>
+
+          <h4>default</h4>
+          <code>
+            <pre>
+&lt;rz-fontsize&gt;
+&lt;rz-fontsize/&gt;</pre
+            >
+          </code>
+        </span>
+
+        <h3>Attributes</h3>
+
+        <table>
+          <tr>
+            <th>attribute</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td>-/-</td>
+            <td>-/-</td>
+            <td>-/-</td>
+          </tr>
+        </table>
+        <p><br /></p>
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>&nbsp;</h5>
-        <p class="brief"><rz-datetime></rz-datetime></p>
+        <h5>Examples</h5>
+        <p><rz-language></rz-language></p>
       </div>
     </main>
 

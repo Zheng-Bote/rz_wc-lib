@@ -59,7 +59,7 @@
 ![HTML5](https://img.shields.io/badge/HTML-5+-E34F26?logo=html5)
 ![Typescript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)
 ![Svelte.js](https://img.shields.io/badge/Svelte-5-324FFF?logo=svelte)
-![CSS3](https://img.shields.io/badge/CSS3-663399?logo=css3)
+![CSS3](https://img.shields.io/badge/CSS-663399?logo=css3)
 
 Web Components library
 
@@ -75,13 +75,27 @@ Web Components library
 
 <br>
 
-- \[ ] runs on modern Browsers
+- \[x] runs on modern Browsers
+
+### Web Components
+
+- \[x] rz-header : horizontal header with brand logo and site functions (change language, toogle dark/light mode, change fontsize, login...)
+- \[x] rz-breadcrumbs : dynamic generated breadcrumbs
+- \[x] rz-button-top : shows a button "goto top" if viewport is invisible
+- \[x] rz-cookie-alert : sets a website cookie, if accepted by user
+- \[x] rz-fontsize : choose and change website fontsize (S, M, L, XL)
+- \[x] rz-language : switch website language
+- \[x] rz-theme : toogle dark-/light-mode
+- \[x] rz-loginform : standardized login-form
+- \[x] rz-online : shows if client is on-/offline
+- \[x] rz-datetime : shows date / time in the choosen timezone and format
+- \[x] rz-modal : shows a modal window with given header-, body-, footer-text
+- \[x] rz-imprint : loads/includes the imprint / legal-notice html based on language
+- \[x] rz-footer : horizontal footer with 3 defineable sections
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Status
-
-:arrow_right: <mark>:warning: still under construction :warning:</mark> :arrow_left:
 
 ![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/rz_wc-lib)
 ![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/rz_wc-lib)
@@ -92,9 +106,45 @@ Web Components library
 ![GitHub Issues](https://img.shields.io/github/issues/Zheng-Bote/rz_wc-lib)
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Zheng-Bote/rz_wc-lib)
 
-## folder structure
+# Documentation
+
+> \[!TIP]
+> see also: <a href="https://www.hase-zheng.net/" title="[www.hase-zheng.net/](https://www.hase-zheng.net/)">www.hase-zheng.net/</a> for examples
+
+## Usage
+
+### Declaration of Web-Component
+
+Declare the web-component script in html-header or somewhere in body
+
+```html
+<script type="module" src="/assets/rz-xxx.js"></script>
+```
+
+### Initialization of Web-Component
+
+initalizize the web-component, in some cases with optional attribute=value
+
+```html
+<rz-xxx optional="value" optional="value"></rz-xxx>
+```
+
+## Development
+
+### Dependencies
+
+> \[!NOTE]
+> All licenses are therefore Open Source.
+
+- \[x] Vite (tested with 6.2.0)
+- \[x] Typescript (tested with 5.7.2)
+- \[x] Svelte (tested with 5.20.2)
+- \[x] sveltejs/vite-plugin-svelte (tested with 5.0.3)
+
+### folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -174,6 +224,7 @@ Web Components library
 
 13 directories, 62 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>

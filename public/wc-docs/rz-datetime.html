@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="http://127.0.0.1:5500/dist/" />
+
+    <title>datetime</title>
+
+    <meta name="description" content="template for HTML5" />
+    <meta name="version" content="v0.1.0" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <!--
+    <meta name="theme-color" content="#eef2f3" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#8e9eab"
+    /> -->
+
+    <!-- <link rel="preconnect" href="https://www.hase-zheng.net" /> -->
+
+    <link rel="alternate icon" href="img/icons/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      href="img/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
+
+    <link href="/dist/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/coding.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/link.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/text.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/theme.css" rel="stylesheet" type="text/css" />
+
+    <script type="module" src="/dist/assets/rz-header.js"></script>
+    <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
+    <script type="module" src="/dist/assets/rz-button-top.js"></script>
+    <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
+    <script type="module" src="/dist/assets/rz-footer.js"></script>
+
+    <script src="/dist/js/i18n.js"></script>
+
+    <script type="module" src="/dist/assets/rz-datetime.js"></script>
+    <script type="module" src="/dist/assets/rz-clock.js"></script>
+
+    <style></style>
+  </head>
+  <body>
+    <rz-header></rz-header>
+    <rz-breadcrumbs></rz-breadcrumbs>
+
+    <span id="top"></span>
+    <div id="rz_button_top">
+      <rz-button-top></rz-button-top>
+    </div>
+    <rz-cookie-alert></rz-cookie-alert>
+
+    <main>
+      <aside>
+        <p><br /></p>
+        <span class="aside_nav">
+          <h5>Navigation</h5>
+          <br />
+          <p><a href="wc-docs/rz-datetime.html">datetime</a></p>
+          <p><a href="wc-docs/rz-clocks.html">clocks</a></p>
+        </span>
+      </aside>
+      <div class="content">
+        <h1>web-components</h1>
+        <p><br /></p>
+
+        <h2>rz-datetime</h2>
+        <p></p>
+
+        <h3>Syntax</h3>
+        <span class="coding">
+          <code>
+            <pre>&lt;rz-datetime&gt; &lt;rz-datetime/&gt;</pre>
+          </code>
+
+          <h4>default</h4>
+          <code>
+            <pre>
+&lt;rz-datetime&gt;
+  tz="Europe/Berlin"
+  format="de-DE"
+  fulldatetime="yes"
+&lt;rz-datetime/&gt;</pre
+            >
+          </code>
+        </span>
+
+        <h3>Attributes</h3>
+
+        <table>
+          <tr>
+            <th>attribute</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td>tz</td>
+            <td>&lt;timezone&gt;</td>
+            <td>timezone, eg: "Europe/Berlin"</td>
+          </tr>
+          <tr>
+            <td>format</td>
+            <td>&lt;locales&gt;</td>
+            <td>locale, eg: "de-DE"</td>
+          </tr>
+          <tr>
+            <td>fulldatetime</td>
+            <td>&lt;yes&gt; | &lt;no&gt;</td>
+            <td>yes, eg: "12.4.2025, 19:28:46"</td>
+          </tr>
+          <tr>
+            <td>justdate</td>
+            <td>&lt;yes&gt; | &lt;no&gt;</td>
+            <td>yes, eg: "12.4.2025"</td>
+          </tr>
+          <tr>
+            <td>justtime</td>
+            <td>&lt;yes&gt; | &lt;no&gt;</td>
+            <td>yes, eg: "19:28:46"</td>
+          </tr>
+        </table>
+        <p><br /></p>
+      </div>
+      <div class="aside_right">
+        <p><br /></p>
+        <h5>Examples</h5>
+
+        <div class="flex_center">
+          <div class="the_clock">
+            <p class="brief">Asia/Shanghai</p>
+            <span class="dt"
+              ><rz-datetime tz="Asia/Shanghai"></rz-datetime
+            ></span>
+          </div>
+          <br />
+          <div class="the_clock">
+            <p class="brief">Europe/Berlin</p>
+            <span class="dt"
+              ><rz-datetime tz="Europe/Berlin" format="de-DE"></rz-datetime
+            ></span>
+          </div>
+          <br />
+          <div class="the_clock">
+            <p class="brief">Africa/Johannesburg</p>
+            <span class="dt"
+              ><rz-datetime
+                tz="Africa/Johannesburg"
+                format="en-GB"
+              ></rz-datetime
+            ></span>
+          </div>
+          <br />
+          <div class="the_clock">
+            <p class="brief">Europe/Moscow</p>
+            <span class="dt"
+              ><rz-datetime tz="Europe/Moscow" format="ru-RU"></rz-datetime
+            ></span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <rz-footer url_right="/dist/legal.html"></rz-footer>
+
+    <script>
+      const myChannel = new BroadcastChannel("language_channel");
+      myChannel.onmessage = function (event) {
+        console.log("myChannel.onmessage = ", event.data);
+        setLocale(event.data);
+      };
+    </script>
+
+    <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
+  </body>
+</html>

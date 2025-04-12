@@ -8,6 +8,7 @@ export default defineConfig({
       input: [
         "src/lib/rz-breadcrumbs.js",
         "src/lib/rz-cookie-alert.js",
+        "src/lib/rz-clock.js",
         "src/lib/Counter.svelte",
         "src/lib/rz-header.svelte",
         "src/lib/rz-fontsize.svelte",
