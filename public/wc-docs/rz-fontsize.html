@@ -40,16 +40,13 @@
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
     <script src="/dist/js/i18n.js"></script>
 
     <style>
-      .the_clock {
-        margin-left: 25px;
-      }
-      rz-datetime {
-        font-size: 0.8rem;
-        opacity: 0.5;
+      ul {
+        padding-left: 20px;
       }
     </style>
   </head>
@@ -67,9 +64,11 @@
       <aside>
         <p><br /></p>
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="#">ref_to</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="fontsize"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
@@ -77,10 +76,26 @@
         <p><br /></p>
 
         <h2>rz-fontsize</h2>
-        <p></p>
+        <p>Increase or decrease the fontsize.</p>
+        <ul>
+          <li>S: smaller than defined/default font-size (~ -2px)</li>
+          <li>M: same as defined/default font-size</li>
+          <li>L: larger than defined/default font-size (~ +2px)</li>
+          <li>XL: x-larger the the defined/default font-size (~ +4px)</li>
+        </ul>
+
+        <br />
 
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
+          <code>
+            <pre>
+&lt;script type="module" src="/assets/rz-fontsize.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
           <code>
             <pre>&lt;rz-fontsize&gt; &lt;rz-fontsize/&gt;</pre>
           </code>

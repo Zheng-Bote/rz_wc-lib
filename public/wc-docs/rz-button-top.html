@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="http://127.0.0.1:5500/dist/" />
+
+    <title>rz-button-top</title>
+
+    <meta name="description" content="template for HTML5" />
+    <meta name="version" content="v0.1.0" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <!--
+    <meta name="theme-color" content="#eef2f3" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#8e9eab"
+    /> -->
+
+    <!-- <link rel="preconnect" href="https://www.hase-zheng.net" /> -->
+
+    <link rel="alternate icon" href="img/icons/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      href="img/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
+
+    <link href="/dist/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/coding.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/link.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/text.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/theme.css" rel="stylesheet" type="text/css" />
+
+    <script type="module" src="/dist/assets/rz-header.js"></script>
+    <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
+    <script type="module" src="/dist/assets/rz-button-top.js"></script>
+    <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
+    <script type="module" src="/dist/assets/rz-footer.js"></script>
+    <script type="module" src="assets/rz-navmenu.js"></script>
+
+    <script src="/dist/js/i18n.js"></script>
+
+    <style>
+      .the_clock {
+        margin-left: 25px;
+      }
+      rz-datetime {
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <rz-header></rz-header>
+    <rz-breadcrumbs></rz-breadcrumbs>
+
+    <span id="top"></span>
+    <div id="rz_button_top">
+      <rz-button-top></rz-button-top>
+    </div>
+    <rz-cookie-alert></rz-cookie-alert>
+
+    <main>
+      <aside>
+        <p><br /></p>
+        <span class="aside_nav">
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="btntop"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
+        </span>
+      </aside>
+      <div class="content">
+        <h1>web-components</h1>
+        <p><br /></p>
+
+        <h2>rz-button-top</h2>
+        <p>
+          If id="top" will be out of viewport, a button is visible on the right
+          bottom corner with "&uArr;&nbsp;top" to goto position with id="top".
+        </p>
+        <br />
+
+        <h3>Syntax</h3>
+        <span class="coding">
+          Within HTML header:
+          <code>
+            <pre>
+&lt;script type="module" src="/assets/rz-button-top.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
+          <code>
+            <pre>
+&lt;span id="top"&gt;&lt;/span&gt;
+&lt;div id="rz_button_top"&gt;
+  &lt;rz-button-top&gt; &lt;rz-button-top/&gt;
+&lt;/div&gt;</pre
+            >
+          </code>
+
+          <h4>default</h4>
+          <code>
+            <pre>
+&lt;rz-button-top&gt;
+&lt;rz-button-top/&gt;</pre
+            >
+          </code>
+        </span>
+
+        <h3>Attributes</h3>
+
+        <table>
+          <tr>
+            <th>attribute</th>
+            <th>value</th>
+            <th>description</th>
+          </tr>
+          <tr>
+            <td>-/-</td>
+            <td>-/-</td>
+            <td>-/-</td>
+          </tr>
+        </table>
+        <p><br /></p>
+      </div>
+      <div class="aside_right">
+        <p><br /></p>
+        <h5>Examples</h5>
+        <p class="txt">long text</p>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+          amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+          esse molestie consequat, vel illum dolore eu feugiat nulla facilisis
+          at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+          vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          Nam liber tempor cum soluta nobis eleifend option congue nihil
+          imperdiet doming id quod mazim placerat facer possim assum. Lorem
+          ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+          nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+          suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+          vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+          consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et
+          accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+          dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+          voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+          Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+          dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+          elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos
+          erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea
+          et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero
+          voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+          labore et dolore magna aliquyam erat. Consetetur sadipscing elitr, sed
+          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+          kasd gubergren, no sea takimata sanctus. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+          labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+          et accusam et justo duo dolores et ea rebum. Stet clita kasd
+          gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum
+          iriure dolor in hendrerit in vulputate velit esse molestie consequat,
+          vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+          et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+          augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit
+          amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+          ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+          lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+          iriure dolor in hendrerit in vulputate velit esse molestie consequat,
+          vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+          et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+          augue duis dolore te feugait nulla facilisi. Nam liber tempor cum
+          soluta nobis eleifend option congue nihil imperdiet doming id quod
+          mazim placerat facer possim assum. Lorem ipsum dolor sit amet,
+          consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+          ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+          veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+          ut aliquip ex ea commodo
+        </p>
+        <p><br /></p>
+        <div class="flex_center">some text</div>
+      </div>
+    </main>
+
+    <rz-footer url_right="/dist/legal.html"></rz-footer>
+
+    <script>
+      const myChannel = new BroadcastChannel("language_channel");
+      myChannel.onmessage = function (event) {
+        console.log("myChannel.onmessage = ", event.data);
+        setLocale(event.data);
+      };
+    </script>
+
+    <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>clocks</title>
+    <title>rz-imprint</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -32,6 +32,7 @@
     <link href="/dist/css/index.css" rel="stylesheet" type="text/css" />
     <link href="/dist/css/coding.css" rel="stylesheet" type="text/css" />
     <link href="/dist/css/link.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/text.css" rel="stylesheet" type="text/css" />
     <link href="/dist/css/theme.css" rel="stylesheet" type="text/css" />
 
     <script type="module" src="/dist/assets/rz-header.js"></script>
@@ -39,18 +40,12 @@
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
+    <script type="module" src="/dist/assets/rz-imprint.js"></script>
 
     <script src="/dist/js/i18n.js"></script>
 
-    <script type="module" src="/dist/assets/rz-datetime.js"></script>
-    <script type="module" src="/dist/assets/rz-clock.js"></script>
-
-    <style>
-      rz-datetime {
-        font-size: 0.8rem;
-        opacity: 0.5;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <rz-header></rz-header>
@@ -65,35 +60,46 @@
     <main>
       <aside>
         <p><br /></p>
-
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="wc-docs/rz-datetime.html">datetime</a></p>
-          <p><a href="wc-docs/rz-clocks.html">clocks</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="imprint"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
         <h1>web-components</h1>
         <p><br /></p>
 
-        <h2>rz-clock</h2>
-        <p></p>
+        <h2>rz-imprint</h2>
+        <p>
+          loads the imprint / legal-notice based on the current language
+          (imprint_&lt;locale&gt;.htm).
+        </p>
+        <p>e.g. locale = "de-DE": imprint_de.htm</p>
+        <p>e.g. locale is "en-US": imprint_en.htm</p>
+        <br />
 
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
           <code>
-            <pre>&lt;rz-clock&gt; &lt;rz-clock/&gt;</pre>
+            <pre>
+&lt;script type="module" src="/assets/rz-imprint.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
+          <code>
+            <pre>&lt;rz-imprint&gt; &lt;rz-imprint/&gt;</pre>
           </code>
 
           <h4>default</h4>
           <code>
             <pre>
-&lt;rz-clock&gt;
-  clock_width="300"
-  timezone="Asia/Shanghai"
-  title="Beijing"
-&lt;rz-clock/&gt;</pre
+&lt;rz-imprint&gt;
+&lt;rz-imprint/&gt;</pre
             >
           </code>
         </span>
@@ -107,61 +113,21 @@
             <th>description</th>
           </tr>
           <tr>
-            <td>width</td>
-            <td>&lt;pixel&gt;</td>
-            <td>eg: "150"</td>
-          </tr>
-          <tr>
-            <td>timezone</td>
-            <td>&lt;timezone&gt;</td>
-            <td>timezone, eg: "Asia/Shanghai"</td>
-          </tr>
-          <tr>
-            <td>title</td>
-            <td>&lt;name&gt;</td>
-            <td>"Beijing"</td>
+            <td>-/-</td>
+            <td>-/-</td>
+            <td>-/-</td>
           </tr>
         </table>
+        <p><br /></p>
+
+        <h3>Example</h3>
+        <p>switch language and load this page again</p>
+        <br />
+        <p><rz-imprint></rz-imprint></p>
         <p><br /></p>
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>Examples</h5>
-        <p><rz-datetime></rz-datetime></p>
-        <p><br /></p>
-        <div class="flex_center">
-          <div class="the_clock">
-            <rz-clock
-              clock_width="250"
-              timezone="Asia/Shanghai"
-              title="Beijing"
-            ></rz-clock>
-          </div>
-          <br />
-          <div class="the_clock">
-            <rz-clock
-              clock_width="150"
-              timezone="Europe/Berlin"
-              title="Berlin"
-            ></rz-clock>
-          </div>
-          <br />
-          <div class="the_clock">
-            <rz-clock
-              clock_width="150"
-              timezone="Africa/Johannesburg"
-              title="Johannesburg"
-            ></rz-clock>
-          </div>
-          <br />
-          <div class="the_clock">
-            <rz-clock
-              clock_width="150"
-              timezone="Europe/Moscow"
-              title="Moscow"
-            ></rz-clock>
-          </div>
-        </div>
       </div>
     </main>
 

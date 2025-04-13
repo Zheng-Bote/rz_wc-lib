@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>rz-breadcrumbs</title>
+    <title>clocks</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -32,7 +32,6 @@
     <link href="/dist/css/index.css" rel="stylesheet" type="text/css" />
     <link href="/dist/css/coding.css" rel="stylesheet" type="text/css" />
     <link href="/dist/css/link.css" rel="stylesheet" type="text/css" />
-    <link href="/dist/css/text.css" rel="stylesheet" type="text/css" />
     <link href="/dist/css/theme.css" rel="stylesheet" type="text/css" />
 
     <script type="module" src="/dist/assets/rz-header.js"></script>
@@ -44,13 +43,14 @@
 
     <script src="/dist/js/i18n.js"></script>
 
+    <script type="module" src="/dist/assets/rz-datetime.js"></script>
+    <script type="module" src="/dist/assets/rz-clock.js"></script>
+
     <style>
-      .the_clock {
-        margin-left: 25px;
-      }
-      rz-datetime {
-        font-size: 0.8rem;
-        opacity: 0.5;
+      @scope (.flex_center) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     </style>
   </head>
@@ -70,7 +70,7 @@
         <span class="aside_nav">
           <h5>Menu</h5>
           <rz-navmenu
-            current_id="breadcrumbs"
+            current_id="clocks"
             json_url="/dist/rz-navmenu.json"
           ></rz-navmenu>
         </span>
@@ -79,31 +79,32 @@
         <h1>web-components</h1>
         <p><br /></p>
 
-        <h2>rz-breadcrumbs</h2>
-        <p>
-          Based on window.location (url.origin) an automatical breadcrumb will
-          be build up.
-        </p>
+        <h2>rz-clock</h2>
+        <p>Displays an analog clock with the given timezone and locale.</p>
         <br />
+
         <h3>Syntax</h3>
         <span class="coding">
           Within HTML header:
           <code>
             <pre>
-&lt;script type="module" src="/assets/rz-breadcrumbs.js"&gt;&lt;/script&gt;</pre
+&lt;script type="module" src="/assets/rz-clock.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
           Within HTML body:
           <code>
-            <pre>&lt;rz-breadcrumbs&gt; &lt;rz-breadcrumbs/&gt;</pre>
+            <pre>&lt;rz-clock&gt; attribute="value" &lt;rz-clock/&gt;</pre>
           </code>
 
           <h4>default</h4>
           <code>
             <pre>
-&lt;rz-breadcrumbs&gt;
-&lt;rz-breadcrumbs/&gt;</pre
+&lt;rz-clock&gt;
+  clock_width="300"
+  timezone="Asia/Shanghai"
+  title="Beijing"
+&lt;rz-clock/&gt;</pre
             >
           </code>
         </span>
@@ -117,9 +118,19 @@
             <th>description</th>
           </tr>
           <tr>
-            <td>-/-</td>
-            <td>-/-</td>
-            <td>-/-</td>
+            <td>width</td>
+            <td>&lt;pixel&gt;</td>
+            <td>eg: "150"</td>
+          </tr>
+          <tr>
+            <td>timezone</td>
+            <td>&lt;timezone&gt;</td>
+            <td>timezone, eg: "Asia/Shanghai"</td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td>&lt;name&gt;</td>
+            <td>"Beijing"</td>
           </tr>
         </table>
         <p><br /></p>
@@ -127,7 +138,41 @@
       <div class="aside_right">
         <p><br /></p>
         <h5>Examples</h5>
-        <p><rz-breadcrumbs></rz-breadcrumbs></p>
+        <p><rz-datetime></rz-datetime></p>
+        <p><br /></p>
+        <div class="flex_center">
+          <div class="the_clock">
+            <rz-clock
+              clock_width="250"
+              timezone="Asia/Shanghai"
+              title="Beijing"
+            ></rz-clock>
+          </div>
+          <br />
+          <div class="the_clock">
+            <rz-clock
+              clock_width="150"
+              timezone="Europe/Berlin"
+              title="Berlin"
+            ></rz-clock>
+          </div>
+          <br />
+          <div class="the_clock">
+            <rz-clock
+              clock_width="150"
+              timezone="Africa/Johannesburg"
+              title="Johannesburg"
+            ></rz-clock>
+          </div>
+          <br />
+          <div class="the_clock">
+            <rz-clock
+              clock_width="150"
+              timezone="Europe/Moscow"
+              title="Moscow"
+            ></rz-clock>
+          </div>
+        </div>
       </div>
     </main>
 

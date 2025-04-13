@@ -7,5 +7,8 @@
   "main-section-brief": "Section Main Template",
   "Author": "Author",
   "text_width_limited": "Text-width limited to 80ch",
-  "app-desc": "Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera-Templates and static assets."
+  "app-desc": "Basic pre-configured Rust Webserver with Rocket, CORS, CSRF, Fileserver for Tera-Templates and static assets.",
+  "Source": "Source",
+  "Web-Components": "Web-Components",
+  "web-components_desc": "Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps."
 }

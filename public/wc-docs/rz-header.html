@@ -45,6 +45,7 @@
 
     <script type="module" src="/dist/assets/rz-datetime.js"></script>
     <script type="module" src="/dist/assets/rz-clock.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
     <style></style>
   </head>
@@ -62,10 +63,11 @@
       <aside>
         <p><br /></p>
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="wc-docs/rz-datetime.html">datetime</a></p>
-          <p><a href="wc-docs/rz-clocks.html">clocks</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="header"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
@@ -73,10 +75,22 @@
         <p><br /></p>
 
         <h2>rz-header</h2>
-        <p></p>
+        <p class="txt">
+          Displays a fixed header with a given brand logo and a given brand
+          name.
+        </p>
+        <br />
 
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
+          <code>
+            <pre>
+&lt;script type="module" src="/assets/rz-header.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
           <code>
             <pre>
 &lt;rz-header&gt; brand_img="path/to/image" brand_title="my title" &lt;rz-header/&gt;</pre

@@ -21,6 +21,7 @@ export default defineConfig({
         "src/lib/rz-online.svelte",
         "src/lib/rz-button-top.svelte",
         "src/lib/rz-loginform.svelte",
+        "src/lib/rz-navmenu.svelte",
       ],
       output: {
         chunkFileNames: "assets/[name].js",

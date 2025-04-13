@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>rz-breadcrumbs</title>
+    <title>rz-online</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -41,6 +41,7 @@
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
     <script type="module" src="/dist/assets/rz-navmenu.js"></script>
+    <script type="module" src="/dist/assets/rz-online.js"></script>
 
     <script src="/dist/js/i18n.js"></script>
 
@@ -70,7 +71,7 @@
         <span class="aside_nav">
           <h5>Menu</h5>
           <rz-navmenu
-            current_id="breadcrumbs"
+            current_id="online"
             json_url="/dist/rz-navmenu.json"
           ></rz-navmenu>
         </span>
@@ -79,31 +80,31 @@
         <h1>web-components</h1>
         <p><br /></p>
 
-        <h2>rz-breadcrumbs</h2>
-        <p>
-          Based on window.location (url.origin) an automatical breadcrumb will
-          be build up.
-        </p>
+        <h2>rz-online</h2>
+        <p>Displays the online status in red (offline) and green (online)</p>
+        <p>Usefull within a PWA</p>
         <br />
+
         <h3>Syntax</h3>
         <span class="coding">
           Within HTML header:
           <code>
             <pre>
-&lt;script type="module" src="/assets/rz-breadcrumbs.js"&gt;&lt;/script&gt;</pre
+&lt;script type="module" src="/assets/rz-online.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
           Within HTML body:
           <code>
-            <pre>&lt;rz-breadcrumbs&gt; &lt;rz-breadcrumbs/&gt;</pre>
+            <pre>&lt;rz-online attribute="value" &gt; &lt;rz-online/&gt;</pre>
           </code>
 
           <h4>default</h4>
           <code>
             <pre>
-&lt;rz-breadcrumbs&gt;
-&lt;rz-breadcrumbs/&gt;</pre
+&lt;rz-online&gt;
+  with_text=""
+&lt;rz-online/&gt;</pre
             >
           </code>
         </span>
@@ -117,9 +118,9 @@
             <th>description</th>
           </tr>
           <tr>
-            <td>-/-</td>
-            <td>-/-</td>
-            <td>-/-</td>
+            <td>with_text</td>
+            <td>&lt;yes&gt;|&lt;no&gt;</td>
+            <td>display text: online|offline</td>
           </tr>
         </table>
         <p><br /></p>
@@ -127,7 +128,11 @@
       <div class="aside_right">
         <p><br /></p>
         <h5>Examples</h5>
-        <p><rz-breadcrumbs></rz-breadcrumbs></p>
+        <p>no text:</p>
+        <p><rz-online></rz-online></p>
+        <p>with text:</p>
+        <p><rz-online with_text="yes"></rz-online></p>
+        <p><br /></p>
       </div>
     </main>
 

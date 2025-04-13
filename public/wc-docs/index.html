@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="http://127.0.0.1:5500/dist/" />
+
+    <title>rz-wc-lib</title>
+
+    <meta name="description" content="template for HTML5" />
+    <meta name="version" content="v0.1.0" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <!--
+    <meta name="theme-color" content="#eef2f3" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#8e9eab"
+    /> -->
+
+    <!-- <link rel="preconnect" href="https://www.hase-zheng.net" /> -->
+
+    <link rel="alternate icon" href="img/icons/favicon.ico" />
+    <link
+      rel="shortcut icon"
+      href="img/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" type="image/svg+xml" href="img/icons/favicon.svg" />
+
+    <link href="/dist/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/coding.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/link.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/text.css" rel="stylesheet" type="text/css" />
+    <link href="/dist/css/theme.css" rel="stylesheet" type="text/css" />
+
+    <script type="module" src="/dist/assets/rz-header.js"></script>
+    <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
+    <script type="module" src="/dist/assets/rz-datetime.js"></script>
+    <script type="module" src="/dist/assets/rz-button-top.js"></script>
+    <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
+    <script type="module" src="/dist/assets/rz-footer.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
+
+    <script src="/dist/js/i18n.js"></script>
+  </head>
+  <body>
+    <rz-header></rz-header>
+    <rz-breadcrumbs></rz-breadcrumbs>
+
+    <span id="top"></span>
+    <div id="rz_button_top">
+      <rz-button-top></rz-button-top>
+    </div>
+    <rz-cookie-alert></rz-cookie-alert>
+
+    <main>
+      <aside>
+        <p><br /></p>
+        <span class="aside_nav">
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="main"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
+        </span>
+      </aside>
+      <div class="content">
+        <h1 data-i18n-key="Web-Components">Web-Components</h1>
+
+        <p class="txt" data-i18n-key="web-components_desc">
+          Web Components is a suite of different technologies allowing you to
+          create reusable custom elements — with their functionality
+          encapsulated away from the rest of your code — and utilize them in
+          your web apps.
+        </p>
+        <span class="brief" data-i18n-key="Source">Source:</span>&nbsp;<span
+          ><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+            title="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+            >MDN Docs</a
+          ></span
+        >
+
+        <p><br /></p>
+        <p>Source code of this Web-Components library can be found here:</p>
+        <a
+          href="https://github.com/Zheng-Bote/rz_wc-lib"
+          title="https://github.com/Zheng-Bote/rz_wc-lib"
+          >https://github.com/Zheng-Bote/rz_wc-lib</a
+        >
+      </div>
+      <div class="aside_right">
+        <p><br /></p>
+        <h5>&nbsp;</h5>
+        <p class="brief"><rz-datetime></rz-datetime></p>
+      </div>
+    </main>
+
+    <rz-footer url_right="/dist/legal.html"></rz-footer>
+
+    <script>
+      const myChannel = new BroadcastChannel("language_channel");
+      myChannel.onmessage = function (event) {
+        console.log("myChannel.onmessage = ", event.data);
+        setLocale(event.data);
+      };
+    </script>
+
+    <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
+  </body>
+</html>

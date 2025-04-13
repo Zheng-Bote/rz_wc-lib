@@ -2,9 +2,9 @@ const locale_en = "en";
 const locale_de = "de";
 
 const cookieText_de =
-  'Auch diese Webseite mag Cookies...<small><a href="https://de.wikipedia.org/wiki/HTTP-Cookie" title="Wikipedia: https://de.wikipedia.org/wiki/HTTP-Cookie">Wikipedia</a></small>';
+  'Auch diese Webseite mag Cookies...&nbsp;<small><a href="https://de.wikipedia.org/wiki/HTTP-Cookie" title="Wikipedia: https://de.wikipedia.org/wiki/HTTP-Cookie">Wikipedia</a></small>';
 const cookieText_en =
-  'This website also likes cookies...<small><a href="https://en.wikipedia.org/wiki/HTTP_cookie" title="Wikipedia: https://en.wikipedia.org/wiki/HTTP-Cookie">Wikipedia</a></small>';
+  'This website also likes cookies...&nbsp;<small><a href="https://en.wikipedia.org/wiki/HTTP_cookie" title="Wikipedia: https://en.wikipedia.org/wiki/HTTP-Cookie">Wikipedia</a></small>';
 
 const styleRules = `
 .container {
@@ -61,8 +61,8 @@ class RzCookieAlert extends HTMLElement {
     this.locale_de = "de";
     this.language = localStorage.getItem("language") || locale_en;
     this.language === "en"
-      ? (this._message = this.locale_en)
-      : (this._message = this.locale_de); //_language;
+      ? (this._message = cookieText_en)
+      : (this._message = cookieText_de); //_language;
 
     this.attachShadow({ mode: "open" });
   }

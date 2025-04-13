@@ -45,6 +45,7 @@
 
     <script type="module" src="/dist/assets/rz-datetime.js"></script>
     <script type="module" src="/dist/assets/rz-clock.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
     <style></style>
   </head>
@@ -62,10 +63,11 @@
       <aside>
         <p><br /></p>
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="wc-docs/rz-datetime.html">datetime</a></p>
-          <p><a href="wc-docs/rz-clocks.html">clocks</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="footer"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
@@ -73,10 +75,23 @@
         <p><br /></p>
 
         <h2>rz-footer</h2>
-        <p></p>
-
+        <p class="txt">
+          Displays a fixed footer with three sections (left, middle, right).
+          <br>
+          If the given year is smaller than the current year, string will be "&lt;given year&gt;-&lt;current year&gt;"
+        </p>
+        <br>
+        </br>
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
+          <code>
+            <pre>
+&lt;script type="module" src="/assets/rz-footer.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
           <code>
             <pre>&lt;rz-footer&gt; attribute="value" &lt;rz-footer/&gt;</pre>
           </code>

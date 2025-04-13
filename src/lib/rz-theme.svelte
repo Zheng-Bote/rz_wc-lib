@@ -45,6 +45,7 @@ let light_txt:string = light_txt_en;
     }
 
     document.documentElement.setAttribute("data-theme", currentMode);
+    document.documentElement.style.setProperty("color-scheme", currentMode);
     localStorage.setItem("theme", currentMode);
     //console.info("handleToggle: ", currentMode);
   }
@@ -56,11 +57,13 @@ let light_txt:string = light_txt_en;
       currentMode = "light";
       icon = dark;
       document.documentElement.setAttribute("data-theme", currentMode);
+      document.documentElement.style.setProperty("color-scheme", currentMode);
       return;
     } else if (currentMode === "dark") {
       currentMode = "dark";
       icon = light;
       document.documentElement.setAttribute("data-theme", currentMode);
+      document.documentElement.style.setProperty("color-scheme", currentMode);
       return;
     }
 
@@ -69,10 +72,12 @@ let light_txt:string = light_txt_en;
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.style.setProperty("color-scheme", "dark");
       icon = light;
       currentMode = "dark";
     } else {
       document.documentElement.setAttribute("data-theme", "light");
+      document.documentElement.style.setProperty("color-scheme", "light");
       icon = dark;
       currentMode = "light";
     }

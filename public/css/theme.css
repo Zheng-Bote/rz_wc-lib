@@ -1,3 +1,4 @@
+/*
 html[data-theme="light"] {
   background-color: #cae5ff;
   transition: background-color 0.5s ease;
@@ -9,7 +10,6 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  /*background-color: var(--background-color); */
   background-color: #6f8ab7;
   transition: background-color 0.5s ease;
   color: var(--font-color);
@@ -19,7 +19,7 @@ html[data-theme="dark"] {
     color: oklch(95.84% 0.004 214.33);
   }
 }
-
+*/
 @media screen and (max-width: 639px) {
   html {
     font-size: 12px;

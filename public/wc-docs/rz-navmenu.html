@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>rz-breadcrumbs</title>
+    <title>rz-navmenu</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -44,15 +44,7 @@
 
     <script src="/dist/js/i18n.js"></script>
 
-    <style>
-      .the_clock {
-        margin-left: 25px;
-      }
-      rz-datetime {
-        font-size: 0.8rem;
-        opacity: 0.5;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <rz-header></rz-header>
@@ -70,7 +62,7 @@
         <span class="aside_nav">
           <h5>Menu</h5>
           <rz-navmenu
-            current_id="breadcrumbs"
+            current_id="navmenu"
             json_url="/dist/rz-navmenu.json"
           ></rz-navmenu>
         </span>
@@ -79,31 +71,31 @@
         <h1>web-components</h1>
         <p><br /></p>
 
-        <h2>rz-breadcrumbs</h2>
-        <p>
-          Based on window.location (url.origin) an automatical breadcrumb will
-          be build up.
-        </p>
+        <h2>rz-navmenu</h2>
+        <p></p>
         <br />
+
         <h3>Syntax</h3>
         <span class="coding">
           Within HTML header:
           <code>
             <pre>
-&lt;script type="module" src="/assets/rz-breadcrumbs.js"&gt;&lt;/script&gt;</pre
+&lt;script type="module" src="/assets/rz-navmenu.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
           Within HTML body:
           <code>
-            <pre>&lt;rz-breadcrumbs&gt; &lt;rz-breadcrumbs/&gt;</pre>
+            <pre>&lt;rz-navmenu attribute="value" &gt; &lt;rz-navmenu/&gt;</pre>
           </code>
 
           <h4>default</h4>
           <code>
             <pre>
-&lt;rz-breadcrumbs&gt;
-&lt;rz-breadcrumbs/&gt;</pre
+&lt;rz-navmenu&gt;
+  json_url="/data/rz-navmenu.json"
+  current_id="navmenu"
+&lt;rz-navmenu/&gt;</pre
             >
           </code>
         </span>
@@ -117,17 +109,54 @@
             <th>description</th>
           </tr>
           <tr>
-            <td>-/-</td>
-            <td>-/-</td>
-            <td>-/-</td>
+            <td>json_url</td>
+            <td>&lt;URL&gt;</td>
+            <td>URL to JSON file, eg: "/data/rz-navmenu.json"</td>
+          </tr>
+          <tr>
+            <td>current_id</td>
+            <td>&lt;id&gt;</td>
+            <td>id of the current page, e.g.: "navmenu"</td>
           </tr>
         </table>
+        <p><br /></p>
+        <h3>Example JSON</h3>
+        <span class="coding">
+          <code>
+            <pre>
+[
+  { 
+    "index": 0,
+    "id": "main", 
+    "name": "Main", 
+    "link": "./index.html"
+  },
+  {
+    "index": 1,
+    "id": "breadcrumbs",
+    "name": "Breadcrumbs",
+    "link": "./wc-docs/rz-breadcrumbs.html"
+  },
+  {
+    "index": 2,
+    "id": "btntop",
+    "name": "Button Top",
+    "link": "./wc-docs/rz-button-top.html"
+  },
+  {
+    "index": 3,
+    "id": "clocks",
+    "name": "Worldclocks",
+    "link": "./wc-docs/rz-clock.html"
+  }
+]</pre
+            >
+          </code>
+        </span>
         <p><br /></p>
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>Examples</h5>
-        <p><rz-breadcrumbs></rz-breadcrumbs></p>
       </div>
     </main>
 

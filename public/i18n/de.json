@@ -7,5 +7,8 @@
   "main-section-brief": "Sektions Vorlage für Main",
   "Author": "Autor",
   "text_width_limited": "Textbreite limitiert auf 80ch",
-  "app-desc": "Grundlegender vorkonfigurierter Rust-Webserver mit Rocket, CORS, CSRF, Dateiserver für Tera-Vorlagen und statischen Assets."
+  "app-desc": "Grundlegender vorkonfigurierter Rust-Webserver mit Rocket, CORS, CSRF, Dateiserver für Tera-Vorlagen und statischen Assets.",
+  "Source": "Quelle",
+  "Web-Components": "Web-Komponenten",
+  "web-components_desc": "Web Components ist eine Suite verschiedener Technologien, die es Ihnen ermöglicht, wiederverwendbare benutzerdefinierte Elemente zu erstellen, deren Funktionalität von Ihrem restlichen Code gekapselt ist, und sie in Ihren Webanwendungen zu nutzen."
 }

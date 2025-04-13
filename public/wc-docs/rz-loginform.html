@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="http://127.0.0.1:5500/dist/" />
 
-    <title>rz-login</title>
+    <title>rz-loginform</title>
 
     <meta name="description" content="template for HTML5" />
     <meta name="version" content="v0.1.0" />
@@ -39,6 +39,7 @@
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
     <script src="/dist/js/i18n.js"></script>
 
@@ -56,7 +57,14 @@
 
     <main>
       <aside>
-        <span class="aside_nav"></span>
+        <p><br /></p>
+        <span class="aside_nav">
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="loginform"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
+        </span>
       </aside>
       <div class="content">
         <h1>web-components</h1>
@@ -65,18 +73,25 @@
         <h2>rz-loginform</h2>
         <p></p>
         <p>
-          On-load tries to read local storage attribute "lang".
+          On-load tries to read local storage attribute "language".
           <br />
-          Web-Component included i18n: "de" and "en".
+          Web-Component includes i18n: "de" and "en".
         </p>
-
-        <rz-loginform></rz-loginform>
+        <br />
 
         <h2>rz-loginform</h2>
         <p></p>
 
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
+          <code>
+            <pre>
+&lt;script type="module" src="/assets/rz-loginform.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
           <code>
             <pre>
 &lt;rz-loginform login_url="&lt;URL&gt;" &gt; &lt;rz-loginform/&gt;</pre

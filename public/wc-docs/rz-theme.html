@@ -40,16 +40,13 @@
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
     <script src="/dist/js/i18n.js"></script>
 
     <style>
-      .the_clock {
-        margin-left: 25px;
-      }
-      rz-datetime {
-        font-size: 0.8rem;
-        opacity: 0.5;
+      ul {
+        padding-left: 20px;
       }
     </style>
   </head>
@@ -67,9 +64,11 @@
       <aside>
         <p><br /></p>
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="#">ref_to</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="theme"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
@@ -77,10 +76,25 @@
         <p><br /></p>
 
         <h2>rz-theme</h2>
-        <p></p>
+        <p>Switch between dark mode and light mode.</p>
+        <p>In fact, the web-component just sets the following attributes:</p>
+        <ul>
+          <li>document element attribute "data-theme"</li>
+          <li>document element style "color-scheme"</li>
+          <li>local storage "theme"</li>
+        </ul>
+        <br />
 
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
+          <code>
+            <pre>
+&lt;script type="module" src="/assets/rz-theme.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
           <code>
             <pre>&lt;rz-theme&gt; &lt;rz-theme/&gt;</pre>
           </code>
@@ -108,6 +122,24 @@
             <td>-/-</td>
           </tr>
         </table>
+        <p><br /></p>
+        <h3>Usage</h3>
+        <p>Example usage</p>
+        <span class="coding">
+          <code>
+            <pre>
+:root {
+  color-scheme: light dark;
+  --font-color: light-dark(oklch(0% 0 0), oklch(95.84% 0.004 214.33));
+  --background-color: light-dark(#cae5ff, #6f8ab7);
+}
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}</pre
+            >
+          </code>
+        </span>
         <p><br /></p>
       </div>
       <div class="aside_right">

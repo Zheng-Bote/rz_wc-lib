@@ -41,16 +41,36 @@
     <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
     <script type="module" src="/dist/assets/rz-modal.js"></script>
+    <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
-    <script src="/dist/js/i18n.js"></script>
+    <script&gt; src="/dist/js/i18n.js"></script>
 
     <style>
-      .the_clock {
-        margin-left: 25px;
-      }
-      rz-datetime {
-        font-size: 0.8rem;
-        opacity: 0.5;
+      @scope (.modal-btn){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        button {
+            width:50px;
+            height:35px;
+            background-color: var(--transparency);
+            border: var(--border-width) var(--border-style) var(--border-color);
+            border-radius: var(--border-radius);
+            display: block;
+            margin: var(--base-padding) 0 var(--base-padding) 0;
+        }
+        button:not(.active):hover {
+          background-color: var(--secondary-color);
+          border: var(--border-width) var(--border-style) var(--border-color);
+          border-radius: var(--border-radius);
+          box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+        }
+        .active {
+          background-color: var(--secondary-color);
+          /*text-shadow: 2px 2px rgba(0, 0, 0, 0.3); */
+          font-weight: bold;
+        }
       }
     </style>
   </head>
@@ -68,9 +88,11 @@
       <aside>
         <p><br /></p>
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="#">ref_to</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="modal"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
@@ -79,20 +101,32 @@
 
         <h2>rz-modal</h2>
         <p></p>
+        <br />
 
         <h3>Syntax</h3>
         <span class="coding">
+          Within HTML header:
           <code>
-            <pre>&lt;rz-modal&gt; &lt;rz-modal/&gt;</pre>
+            <pre>
+&lt;script type="module" src="/assets/rz-modal.js"&gt;&lt;/script&gt;</pre
+            >
+          </code>
+          <br />
+          Within HTML body:
+          <code>
+            <pre>&lt;rz-modal id="rzmodal" attribute="value" &gt; &lt;rz-modal/&gt;</pre>
           </code>
 
           <h4>default</h4>
           <code>
             <pre>
-&lt;rz-modal&gt;
-  tz="Europe/Berlin"
-  format="de-DE"
-  fulldatetime="yes"
+&lt;rz-modal
+  id="rzmodal"
+  title="Salute"
+  body="Hello World 你好世界 Hola Mundo Привет мир Hallo Welt!"
+  footer=""
+  color="info"
+&gt;
 &lt;rz-modal/&gt;</pre
             >
           </code>
@@ -107,39 +141,91 @@
             <th>description</th>
           </tr>
           <tr>
-            <td>tz</td>
-            <td>&lt;timezone&gt;</td>
-            <td>timezone, eg: "Europe/Berlin"</td>
+            <td>title</td>
+            <td>&lt;title&gt;</td>
+            <td>title of the modal window</td>
           </tr>
           <tr>
-            <td>format</td>
-            <td>&lt;locales&gt;</td>
-            <td>locale, eg: "de-DE"</td>
+            <td>body</td>
+            <td>&lt;body&gt;</td>
+            <td>text within the modal window</td>
           </tr>
           <tr>
-            <td>fulldatetime</td>
-            <td>&lt;yes&gt; | &lt;no&gt;</td>
-            <td>yes, eg: "12.4.2025, 19:28:46"</td>
+            <td>footer</td>
+            <td>&lt;footer&gt;</td>
+            <td>optional, text of the modal window footer</td>
           </tr>
           <tr>
-            <td>justdate</td>
-            <td>&lt;yes&gt; | &lt;no&gt;</td>
-            <td>yes, eg: "12.4.2025"</td>
-          </tr>
-          <tr>
-            <td>justtime</td>
-            <td>&lt;yes&gt; | &lt;no&gt;</td>
-            <td>yes, eg: "19:28:46"</td>
+            <td>color</td>
+            <td>&lt;info&gt;|&lt;red&gt;|&lt;yellow&gt;|&lt;green&gt;</td>
+            <td>optional, color of the modal window</td>
           </tr>
         </table>
+        <p><br></p>
+        <h3>Usage</h3>
+        <p>Example usage</p>
+        <span class="coding">
+          <code>
+            <pre>
+    &lt;script&gt;
+      function showInfo() {
+        const modal = document.getElementById("rzmodal");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+      function showGreen() {
+        const modal = document.getElementById("rzmodal");
+        modal.setAttribute("title", "I'm a green title");
+        modal.setAttribute("body", "I'm the green body");
+        modal.setAttribute("footer", "I'm a green footer");
+        modal.setAttribute("color", "green");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+      function showYellow() {
+        const modal = document.getElementById("rzmodal");
+        modal.setAttribute("title", "I'm a yellow title");
+        modal.setAttribute("body", "I'm the yellow body");
+        modal.setAttribute("footer", "I'm a yellow footer");
+        modal.setAttribute("color", "yellow");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+      function showRed() {
+        const modal = document.getElementById("rzmodal");
+        modal.setAttribute("title", "I'm a red title");
+        modal.setAttribute("body", "I'm the red body");
+        modal.setAttribute("footer", "I'm a red footer");
+        modal.setAttribute("color", "red");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+    &lt;/script&gt;
+            </pre>
+          </code>
+        </span>
+
         <p><br /></p>
       </div>
       <div class="aside_right">
         <p><br /></p>
         <h5>Examples</h5>
-        <p><rz-modal open></rz-modal></p>
-
-        <p><button onclick="showModal()">Klick</button></p>
+        <p><br></p>
+        <p><rz-modal id="rzmodal"></rz-modal></p>
+        <span class="modal-btn">
+          <p><button onclick="showInfo()">Info</button></p>
+          <p><button onclick="showGreen()">Green</button></p>
+          <p><button onclick="showYellow()">Yellow</button></p>
+          <p><button onclick="showRed()">Red</button></p>
+        </span>
       </div>
     </main>
 
@@ -152,11 +238,44 @@
         setLocale(event.data);
       };
 
-      function showModal() {
-        const modal = document.getElementById("rz_modal");
+      function showInfo() {
+        const modal = document.getElementById("rzmodal");
         if (modal) {
-          console.info("is modal");
-          modal.showModal({ backdrop: true });
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+      function showGreen() {
+        const modal = document.getElementById("rzmodal");
+        modal.setAttribute("title", "I'm a green title");
+        modal.setAttribute("body", "I'm the green body");
+        modal.setAttribute("footer", "I'm a green footer");
+        modal.setAttribute("color", "green");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+      function showYellow() {
+        const modal = document.getElementById("rzmodal");
+        modal.setAttribute("title", "I'm a yellow title");
+        modal.setAttribute("body", "I'm the yellow body");
+        modal.setAttribute("footer", "I'm a yellow footer");
+        modal.setAttribute("color", "yellow");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
+        }
+      }
+      function showRed() {
+        const modal = document.getElementById("rzmodal");
+        modal.setAttribute("title", "I'm a red title");
+        modal.setAttribute("body", "I'm the red body");
+        modal.setAttribute("footer", "I'm a red footer");
+        modal.setAttribute("color", "red");
+        if (modal) {
+          const dialog = modal.shadowRoot.querySelector("#rz_modal");
+          dialog.showModal({ backdrop: true });
         }
       }
     </script>

@@ -1,0 +1,93 @@
+[
+  { "index": 0, "id": "main", "name": "Main", "link": "./index.html" },
+  {
+    "index": 1,
+    "id": "breadcrumbs",
+    "name": "Breadcrumbs",
+    "link": "./wc-docs/rz-breadcrumbs.html"
+  },
+  {
+    "index": 2,
+    "id": "btntop",
+    "name": "Button Top",
+    "link": "./wc-docs/rz-button-top.html"
+  },
+  {
+    "index": 3,
+    "id": "clocks",
+    "name": "Worldclocks",
+    "link": "./wc-docs/rz-clock.html"
+  },
+  {
+    "index": 4,
+    "id": "cookiealert",
+    "name": "CookieAlert",
+    "link": "./wc-docs/rz-cookiealert.html"
+  },
+  {
+    "index": 5,
+    "id": "datetime",
+    "name": "DateTime",
+    "link": "./wc-docs/rz-datetime.html"
+  },
+  {
+    "index": 6,
+    "id": "fontsize",
+    "name": "Fontsize",
+    "link": "./wc-docs/rz-fontsize.html"
+  },
+  {
+    "index": 7,
+    "id": "footer",
+    "name": "Footer",
+    "link": "./wc-docs/rz-footer.html"
+  },
+  {
+    "index": 8,
+    "id": "header",
+    "name": "Header",
+    "link": "./wc-docs/rz-header.html"
+  },
+  {
+    "index": 9,
+    "id": "imprint",
+    "name": "Imprint",
+    "link": "./wc-docs/rz-imprint.html"
+  },
+  {
+    "index": 10,
+    "id": "language",
+    "name": "Language",
+    "link": "./wc-docs/rz-language.html"
+  },
+  {
+    "index": 11,
+    "id": "loginform",
+    "name": "Login",
+    "link": "./wc-docs/rz-loginform.html"
+  },
+  {
+    "index": 12,
+    "id": "modal",
+    "name": "Modal",
+    "link": "./wc-docs/rz-modal.html"
+  },
+  {
+    "index": 13,
+    "id": "navmenu",
+    "name": "NavMenu",
+    "link": "./wc-docs/rz-navmenu.html"
+  },
+  {
+    "index": 14,
+    "id": "online",
+    "name": "Online",
+    "link": "./wc-docs/rz-online.html"
+  },
+  {
+    "index": 15,
+    "id": "theme",
+    "name": "Theme",
+    "link": "./wc-docs/rz-theme.html"
+  }
+]

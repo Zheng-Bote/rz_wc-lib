@@ -7,21 +7,24 @@
   export let body: string ="Hello World 你好世界 Hola Mundo Привет мир Hallo Welt!";
   export let footer: string = "";
   export let color: string = "";
+  export let do_open: string = "close";
 
 //let showModal: boolean = false;
 
 
 function closeModal() {
-  const modal = document.getElementById('rz_modal') as HTMLDialogElement;
+  const modal = document.getElementById('rzmodal');
   if (modal) {
-    modal.close();
+    const dialog = modal.shadowRoot.querySelector("#rz_modal");
+    dialog.close();
   }
 }
 
 function showModal() {
-  const modal = document.getElementById('rz_modal') as HTMLDialogElement;
+  const modal = document.getElementById('rzmodal');
   if (modal) {
-    modal.showModal({ backdrop: true });
+    const dialog = modal.shadowRoot.querySelector("#rz_modal");
+    dialog.showModal({ backdrop: true });
   }
 }
 
@@ -36,11 +39,11 @@ onDestroy(() => {
 
 </script>
 
-<button id="rz_modal_button" class="rz_modal_button" onclick={showModal}>
-  Open Modal</button>
+<!-- <button id="rz_modal_button" class="rz_modal_button" onclick={showModal}>
+  Open Modal</button> -->
 
 <span class="rz-modal" id="rz-modal">
-  <dialog id="rz_modal" class="rz_modal">
+  <dialog id="rz_modal" class="rz_modal" {do_open}>
     <div id="rz_modal_content" class="rz_modal_content">
       <div id="rz_modal_header" class="rz_modal_header {color}">
         <span onclick="{closeModal}" aria-hidden="true" id="rz_modal_close" class="rz_modal_close {color}">&times;</span> 

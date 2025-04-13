@@ -32,13 +32,38 @@
   </head>
   <body id="body">
     <span id="top"></span>
-    <div id="app"></div>
+
+    <main>
+      <aside>
+        <p><br /></p>
+        <span class="aside_nav">
+          <h5>Navigation</h5>
+          <br />
+          <p><a href="wc-docs/rz-breadcrumbs.html">Breadcrumbs</a></p>
+          <p><a href="wc-docs/rz-datetime.html">Clocks</a></p>
+          <p><a href="wc-docs/rz-fontsize.html">Fontsize</a></p>
+          <p><a href="wc-docs/rz-footer.html">Footer</a></p>
+          <p><a href="wc-docs/rz-header.html">Header</a></p>
+          <p><a href="wc-docs/rz-language.html">Languages</a></p>
+          <p><a href="wc-docs/rz-loginform.html">Login</a></p>
+          <p><a href="wc-docs/rz-modal.html">Modal</a></p>
+          <p><a href="wc-docs/rz-theme.html">Themes</a></p>
+        </span>
+      </aside>
+      <div class="content">
+        <h1>Web-Components</h1>
+        <p data-i18n-key="app-title">App-Title</p>
+
+        <div id="app"></div>
+      </div>
+      <div class="aside_right">
+        <p><br /></p>
+        <h5>&nbsp;</h5>
+        <p class="brief"><rz-datetime></rz-datetime></p>
+      </div>
+    </main>
 
     <script type="module" src="/src/main.ts"></script>
-
-    <h1 data-i18n-key="app-title">App-Title</h1>
-    <p><br /></p>
-    <p><br /></p>
     <script src="/js/i18n.js"></script>
 
     <script>
