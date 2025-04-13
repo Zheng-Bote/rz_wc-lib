@@ -144,7 +144,6 @@ initalizize the web-component, in some cases with optional attribute=value
 ### folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -176,11 +175,19 @@ initalizize the web-component, in some cases with optional attribute=value
 ├── package.json
 ├── public
 │   ├── css
-│   │   └── index.css
+│   │   ├── coding.css
+│   │   ├── index.css
+│   │   ├── link.css
+│   │   ├── text.css
+│   │   └── theme.css
+│   ├── i18n
+│   │   ├── de.json
+│   │   └── en.json
 │   ├── img
 │   │   ├── icons
 │   │   │   ├── dontpanic.svg
 │   │   │   ├── favicon.ico
+│   │   │   ├── favicon.svg
 │   │   │   ├── glasses-outline.svg
 │   │   │   ├── home-outline.svg
 │   │   │   ├── information-outline.svg
@@ -196,22 +203,46 @@ initalizize the web-component, in some cases with optional attribute=value
 │   │   ├── rz-address_mail.svg
 │   │   ├── rz-address_mail_white.svg
 │   │   ├── rz-address_postal.png
+│   │   ├── rz-clock_bg.jpg
 │   │   ├── rz-qr-code.svg
 │   │   └── zheng_bote.svg
 │   ├── imprint_de.htm
 │   ├── imprint_en.htm
-│   └── index.html
+│   ├── index.html
+│   ├── js
+│   │   └── i18n.js
+│   ├── legal.html
+│   ├── login.html
+│   ├── template.htm
+│   └── wc-docs
+│       ├── index.html
+│       ├── rz-breadcrumbs.html
+│       ├── rz-clocks.html
+│       ├── rz-datetime.html
+│       ├── rz-fontsize.html
+│       ├── rz-footer.html
+│       ├── rz-header.html
+│       ├── rz-language.html
+│       ├── rz-loginform.html
+│       ├── rz-modal.html
+│       └── rz-theme.html
 ├── src
 │   ├── App.svelte
 │   ├── lib
 │   │   ├── Counter.svelte
+│   │   ├── rz-breadcrumbs.js
+│   │   ├── rz-button-top.svelte
+│   │   ├── rz-clock.js
+│   │   ├── rz-cookie-alert.js
 │   │   ├── rz-datetime.svelte
 │   │   ├── rz-fontsize.svelte
 │   │   ├── rz-footer.svelte
 │   │   ├── rz-header.svelte
 │   │   ├── rz-imprint.svelte
 │   │   ├── rz-language.svelte
+│   │   ├── rz-loginform.svelte
 │   │   ├── rz-modal.svelte
+│   │   ├── rz-online.svelte
 │   │   └── rz-theme.svelte
 │   ├── main.ts
 │   └── vite-env.d.ts
@@ -222,9 +253,8 @@ initalizize the web-component, in some cases with optional attribute=value
 ├── tsconfig.node.json
 └── vite.config.ts
 
-13 directories, 62 files
+16 directories, 91 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
