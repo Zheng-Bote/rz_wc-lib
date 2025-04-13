@@ -213,18 +213,24 @@ initalizize the web-component, in some cases with optional attribute=value
 │   │   └── i18n.js
 │   ├── legal.html
 │   ├── login.html
+│   ├── rz-navmenu.json
 │   ├── template.htm
 │   └── wc-docs
 │       ├── index.html
 │       ├── rz-breadcrumbs.html
-│       ├── rz-clocks.html
+│       ├── rz-button-top.html
+│       ├── rz-clock.html
+│       ├── rz-cookiealert.html
 │       ├── rz-datetime.html
 │       ├── rz-fontsize.html
 │       ├── rz-footer.html
 │       ├── rz-header.html
+│       ├── rz-imprint.html
 │       ├── rz-language.html
 │       ├── rz-loginform.html
 │       ├── rz-modal.html
+│       ├── rz-navmenu.html
+│       ├── rz-online.html
 │       └── rz-theme.html
 ├── src
 │   ├── App.svelte
@@ -242,6 +248,7 @@ initalizize the web-component, in some cases with optional attribute=value
 │   │   ├── rz-language.svelte
 │   │   ├── rz-loginform.svelte
 │   │   ├── rz-modal.svelte
+│   │   ├── rz-navmenu.svelte
 │   │   ├── rz-online.svelte
 │   │   └── rz-theme.svelte
 │   ├── main.ts
@@ -253,7 +260,7 @@ initalizize the web-component, in some cases with optional attribute=value
 ├── tsconfig.node.json
 └── vite.config.ts
 
-16 directories, 91 files
+16 directories, 98 files
 ```
 <!-- readme-tree end -->
 
