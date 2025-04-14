@@ -6,7 +6,7 @@
 [Report Issue](https://github.com/Zheng-Bote/rz_wc-lib/issues) [Request Feature](https://github.com/Zheng-Bote/rz_wc-lib/pulls)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/rz_wc-lib)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Zheng-Bote/rz_wc-lib?logo=GitHub)](https://github.com/Zheng-Bote/rz_wc-lib/releases)
 
 </div>
 
@@ -79,19 +79,21 @@ Web Components library
 
 ### Web Components
 
-- \[x] rz-header : horizontal header with brand logo and site functions (change language, toogle dark/light mode, change fontsize, login...)
 - \[x] rz-breadcrumbs : dynamic generated breadcrumbs
 - \[x] rz-button-top : shows a button "goto top" if viewport is invisible
+- \[x] rz-clock : Displays an analog clock with the given timezone and locale.
 - \[x] rz-cookie-alert : sets a website cookie, if accepted by user
-- \[x] rz-fontsize : choose and change website fontsize (S, M, L, XL)
-- \[x] rz-language : switch website language
-- \[x] rz-theme : toogle dark-/light-mode
-- \[x] rz-loginform : standardized login-form
-- \[x] rz-online : shows if client is on-/offline
 - \[x] rz-datetime : shows date / time in the choosen timezone and format
-- \[x] rz-modal : shows a modal window with given header-, body-, footer-text
-- \[x] rz-imprint : loads/includes the imprint / legal-notice html based on language
+- \[x] rz-fontsize : choose and change website fontsize (S, M, L, XL)
 - \[x] rz-footer : horizontal footer with 3 defineable sections
+- \[x] rz-header : horizontal header with brand logo and site functions (change language, toogle dark/light mode, change fontsize, login...)
+- \[x] rz-imprint: loads the imprint / legal-notice based on the current language
+- \[x] rz-language : switch website language
+- \[x] rz-loginform : standardized login-form
+- \[x] rz-modal : shows a modal window with given header-, body-, footer-text
+- \[x] rz-navmenu : Button-based navigation menu
+- \[x] rz-online : shows if client is on-/offline (for PWA)
+- \[x] rz-theme : toogle dark-/light-mode
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -99,8 +101,9 @@ Web Components library
 
 ![GitHub Created At](https://img.shields.io/github/created-at/Zheng-Bote/rz_wc-lib)
 ![GitHub Release Date](https://img.shields.io/github/release-date/Zheng-Bote/rz_wc-lib)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Zheng-Bote/rz_wc-lib?logo=GitHub)](https://github.com/Zheng-Bote/rz_wc-lib/releases)
 
-![Status](https://img.shields.io/badge/Status-under_construction-red)
+![Status](https://img.shields.io/badge/Status-stable-green)
 ![Status](https://img.shields.io/badge/Status-works_as_designed-green)
 
 ![GitHub Issues](https://img.shields.io/github/issues/Zheng-Bote/rz_wc-lib)
@@ -144,6 +147,7 @@ initalizize the web-component, in some cases with optional attribute=value
 ### folder structure
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -262,6 +266,7 @@ initalizize the web-component, in some cases with optional attribute=value
 
 16 directories, 98 files
 ```
+
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
