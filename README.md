@@ -147,7 +147,6 @@ initalizize the web-component, in some cases with optional attribute=value
 ### folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -266,7 +265,6 @@ initalizize the web-component, in some cases with optional attribute=value
 
 16 directories, 98 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
