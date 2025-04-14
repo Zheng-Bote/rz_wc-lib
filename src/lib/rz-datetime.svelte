@@ -3,6 +3,9 @@
 <script lang="ts">
 
 export let tz:string = "Europe/Berlin";
+export let show_tz_pre:string = "no";
+export let show_tz_post:string = "no";
+export let show_tz_top:string = "no";
 export let format:string = "de-DE";
 export let fulldatetime:string = "yes";
 export let justdate:string = "no";
@@ -61,4 +64,15 @@ function getDT() {
   }
 </script>
 
-<span class="rz-datetime"><time datetime="{getDT()}">{getDT()}</time></span>
+<span class="rz-datetime">
+  {#if show_tz_top === "yes"}
+    <span class="tz">{tz}</span><br>
+  {/if}
+  {#if show_tz_pre === "yes"}
+    <span class="tz">{tz}&nbsp;</span>
+  {/if}
+  <time datetime="{getDT()}">{getDT()}</time>
+  {#if show_tz_post === "yes"}
+    <span class="tz">&nbsp;{tz}</span>
+  {/if}
+</span>

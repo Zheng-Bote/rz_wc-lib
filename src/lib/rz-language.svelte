@@ -74,13 +74,13 @@ onMount(() => {
 
 <span class="language">
 
-  <button onclick="{toggleLanguage}"><img src="img/icons/language-outline.svg" alt="{languages[1].short}|{languages[0].short}" title="{languages[1].short}|{languages[0].short}" ></button>
+  <button onclick="{toggleLanguage}"><img src="img/icons/language-outline.svg" alt="{languages[1].short}|{languages[0].short}" title="{languages[1].short}|{languages[0].short}" > {language.toUpperCase()}</button>
 </span>
 
 <style>
   @scope (.language){
     button {
-      width:35px;
+      width:50px;
       height:35px;
       background-color: var(--transparency);
       border: none;
@@ -95,6 +95,8 @@ onMount(() => {
       width: 15px;
       height: auto;  
       decoding: auto;
+      float:left;
+      vertical-align: middle;
     }
   }
 </style>

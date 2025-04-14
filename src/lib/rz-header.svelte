@@ -50,6 +50,7 @@ function goToLogin() {
   });
 </script>
 
+<span class="rz-header">
 <header id="header">
   <nav id="nav">
       <span class="left brand" onclick="{goToHome}" onfocus="{setLanguage}" onmouseover={setLanguage} aria-hidden="true" title="{goto_main}">
@@ -64,9 +65,10 @@ function goToLogin() {
       </span>
   </nav>
 </header>
-
+</span>
 
 <style>
+  @scope(.rz-header){
 header{
   position: sticky;
   top: 0;
@@ -82,7 +84,6 @@ header{
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "left right";
     height: 100%;
-
 
     .left,
     .right {
@@ -121,8 +122,10 @@ header{
         width: 15px;
         height: auto;  
         decoding: auto;
+        vertical-align: middle;
       }
     }
   }
 }
+  }
 </style>

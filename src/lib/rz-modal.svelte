@@ -110,7 +110,7 @@ onDestroy(() => {
   .rz_modal_content {
     margin: auto;
     padding: 0;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--transparency);
     border-radius: 10px;
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -142,7 +142,7 @@ onDestroy(() => {
   }
   .rz_modal_footer {
     background-color: var(--background-color);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--transparency);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     color: var(--color);
     font-size: 0.8rem;

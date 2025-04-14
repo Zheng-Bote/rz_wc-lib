@@ -7,28 +7,36 @@
  */
 
 const css = `
+
   ul.breadcrumb {
-  padding: 2px 10px;
-  list-style: none;
-  background-color: var(--background-color-header);
-}
-ul.breadcrumb li {
-  display: inline;
-  font-size: var(--font-size-small);
-}
-ul.breadcrumb li + li:before {
-  padding: 4px;
-  color: var(--font-color);
-  content: ">";
-}
-ul.breadcrumb li a {
-  color: var(--font-color);
-  text-decoration: none;
-}
-ul.breadcrumb li a:hover {
-  color: var(--font-color);
-  text-decoration: underline;
-}
+    padding: 2px 10px;
+    list-style: none;
+    background-color: var(--background-color-header);
+    border-bottom: var(--border-width) var(--border-style) var(--border-color-header);
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: var(--font-size-small);
+  }
+  ul.breadcrumb li + li:before {
+    padding: 4px;
+    color: var(--font-color);
+    content: ">";
+  }
+  ul.breadcrumb li a {
+    color: var(--font-color);
+    text-decoration: none;
+
+    padding-right: 0em;
+    background: "";
+    no-repeat right;
+    background-size: 0;
+  }
+  ul.breadcrumb li a:hover {
+    color: var(--font-color);
+    text-decoration: underline;
+  }
+
 `;
 
 class BreadcrumbsComponent extends HTMLElement {

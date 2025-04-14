@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="http://127.0.0.1:5500/dist/" />
+    <base href="http://127.0.0.1:5501/dist/" />
 
     <title>rz-theme</title>
 
-    <meta name="description" content="template for HTML5" />
-    <meta name="version" content="v0.1.0" />
+    <meta
+      name="description"
+      content="web-component for changing dark/light mode"
+    />
+    <meta name="version" content="v1.0.0" />
     <meta name="author" content="ZHENG Robert" />
-    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <meta name="date" content="2025-04-13T01:30:00+01:00" />
     <!--
     <meta name="theme-color" content="#eef2f3" />
     <meta
@@ -51,7 +54,7 @@
     </style>
   </head>
   <body>
-    <rz-header></rz-header>
+    <rz-header brand_title="rz-wc-libs"></rz-header>
     <rz-breadcrumbs></rz-breadcrumbs>
 
     <span id="top"></span>
@@ -72,12 +75,17 @@
         </span>
       </aside>
       <div class="content">
-        <h1>web-components</h1>
+        <h1 data-i18n-key="Web-Components">web-components</h1>
         <p><br /></p>
 
         <h2>rz-theme</h2>
-        <p>Switch between dark mode and light mode.</p>
-        <p>In fact, the web-component just sets the following attributes:</p>
+        <p data-i18n-key="rz-theme_desc_1">
+          Switch between dark mode and light mode.
+        </p>
+        <br />
+        <p data-i18n-key="rz-theme_desc_2">
+          In fact, the web-component just sets the following attributes:
+        </p>
         <ul>
           <li>document element attribute "data-theme"</li>
           <li>document element style "color-scheme"</li>
@@ -87,19 +95,19 @@
 
         <h3>Syntax</h3>
         <span class="coding">
-          Within HTML header:
+          <span data-i18n-key="Within_html_header">Within HTML header</span>:
           <code>
             <pre>
 &lt;script type="module" src="/assets/rz-theme.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
-          Within HTML body:
+          <span data-i18n-key="Within_html_body">Within HTML body</span>:
           <code>
             <pre>&lt;rz-theme&gt; &lt;rz-theme/&gt;</pre>
           </code>
 
-          <h4>default</h4>
+          <h4 data-i18n-key="Default_Value">default</h4>
           <code>
             <pre>
 &lt;rz-theme&gt;
@@ -108,13 +116,13 @@
           </code>
         </span>
 
-        <h3>Attributes</h3>
+        <h3 data-i18n-key="Attributes">Attributes</h3>
 
         <table>
           <tr>
-            <th>attribute</th>
-            <th>value</th>
-            <th>description</th>
+            <th data-i18n-key="Attribute">attribute</th>
+            <th data-i18n-key="Value">value</th>
+            <th data-i18n-key="Description">description</th>
           </tr>
           <tr>
             <td>-/-</td>
@@ -123,8 +131,8 @@
           </tr>
         </table>
         <p><br /></p>
-        <h3>Usage</h3>
-        <p>Example usage</p>
+        <h3 data-i18n-key="Usage">Usage</h3>
+        <p data-i18n-key="Example">Example</p>
         <span class="coding">
           <code>
             <pre>
@@ -144,20 +152,18 @@ body {
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>Examples</h5>
+        <h5 data-i18n-key="Example">Example</h5>
         <p><rz-theme></rz-theme></p>
       </div>
     </main>
 
-    <rz-footer url_right="/dist/legal.html"></rz-footer>
+    <rz-footer
+      url_left="https://www.robert.hase-zheng.net/contact"
+      url_middle="https://github.com/Zheng-Bote"
+      url_right="legal.html"
+    ></rz-footer>
 
-    <script>
-      const myChannel = new BroadcastChannel("language_channel");
-      myChannel.onmessage = function (event) {
-        console.log("myChannel.onmessage = ", event.data);
-        setLocale(event.data);
-      };
-    </script>
+    <script></script>
 
     <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
   </body>

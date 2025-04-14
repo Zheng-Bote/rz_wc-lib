@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="http://127.0.0.1:5500/dist/" />
+    <base href="http://127.0.0.1:5501/dist/" />
 
     <title>rz-datetime</title>
 
-    <meta name="description" content="template for HTML5" />
-    <meta name="version" content="v0.1.0" />
+    <meta name="description" content="web-component for world date/time" />
+    <meta name="version" content="v1.0.0" />
     <meta name="author" content="ZHENG Robert" />
-    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <meta name="date" content="2025-04-13T01:30:00+01:00" />
     <!--
     <meta name="theme-color" content="#eef2f3" />
     <meta
@@ -38,7 +38,6 @@
     <script type="module" src="/dist/assets/rz-header.js"></script>
     <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
-    <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
     <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
@@ -47,10 +46,37 @@
     <script type="module" src="/dist/assets/rz-datetime.js"></script>
     <script type="module" src="/dist/assets/rz-clock.js"></script>
 
-    <style></style>
+    <style>
+      .flex_center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      section {
+        border: var(--border-width) var(--border-style) var(--border-color);
+        width: 90%;
+        text-align: left;
+        padding: var(--base-padding);
+        & h5 {
+          text-align: left;
+          opacity: 0.5;
+          margin-bottom: 20px;
+        }
+        & .dt {
+          font-size: 0.8rem;
+        }
+        & .coding {
+          font-size: 0.8rem;
+          & pre {
+            padding: 5px;
+          }
+        }
+      }
+    </style>
   </head>
   <body>
-    <rz-header></rz-header>
+    <rz-header brand_title="rz-wc-libs"></rz-header>
     <rz-breadcrumbs></rz-breadcrumbs>
 
     <span id="top"></span>
@@ -71,52 +97,58 @@
         </span>
       </aside>
       <div class="content">
-        <h1>web-components</h1>
+        <h1 data-i18n-key="Web-Components">web-components</h1>
         <p><br /></p>
 
         <h2>rz-datetime</h2>
-        <p>Displays the date / time based on given timezone and locale.</p>
+        <p data-i18n-key="rz-datetime_desc">
+          Displays the date / time based on given timezone and locale.
+        </p>
         <br />
 
         <h3>Syntax</h3>
         <span class="coding">
-          Within HTML header:
+          <span data-i18n-key="Within_html_header">Within HTML header</span>:
           <code>
             <pre>
 &lt;script type="module" src="/assets/rz-datetime.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
-          Within HTML body:
+          <span data-i18n-key="Within_html_body">Within HTML body</span>:
           <code>
             <pre>
-&lt;rz-datetime&gt; attribute="value" &lt;rz-datetime/&gt;</pre
+&lt;rz-datetime&gt; attribute="value"&gt; &lt;rz-datetime/&gt;</pre
             >
           </code>
 
-          <h4>default</h4>
+          <h4 data-i18n-key="Default_Value">default</h4>
           <code>
             <pre>
-&lt;rz-datetime&gt;
+&lt;rz-datetime
   tz="Europe/Berlin"
   format="de-DE"
   fulldatetime="yes"
+  show_tz_pre="no";
+  show_tz_post="no";
+  show_tz_top="no"
+&gt;
 &lt;rz-datetime/&gt;</pre
             >
           </code>
         </span>
 
-        <h3>Attributes</h3>
+        <h3 data-i18n-key="Attributes">Attributes</h3>
 
         <table>
           <tr>
-            <th>attribute</th>
-            <th>value</th>
-            <th>description</th>
+            <th data-i18n-key="Attribute">attribute</th>
+            <th data-i18n-key="Value">value</th>
+            <th data-i18n-key="Description">description</th>
           </tr>
           <tr>
             <td>tz</td>
-            <td>&lt;timezone&gt;</td>
+            <td>&lt;IANA time zone identifier&gt;</td>
             <td>timezone, eg: "Europe/Berlin"</td>
           </tr>
           <tr>
@@ -139,57 +171,170 @@
             <td>&lt;yes&gt; | &lt;no&gt;</td>
             <td>yes, eg: "19:28:46"</td>
           </tr>
+          <tr>
+            <td>show_tz_pre</td>
+            <td>&lt;yes&gt; | &lt;no&gt;</td>
+            <td>show timezone before date/time</td>
+          </tr>
+          <tr>
+            <td>show_tz_post</td>
+            <td>&lt;yes&gt; | &lt;no&gt;</td>
+            <td>show timezone after date/time</td>
+          </tr>
+          <tr>
+            <td>show_tz_top</td>
+            <td>&lt;yes&gt; | &lt;no&gt;</td>
+            <td>show timezone on-top of date/time</td>
+          </tr>
         </table>
         <p><br /></p>
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>Examples</h5>
-
+        <h5 data-i18n-key="Examples">Examples</h5>
+        <p><br /></p>
         <div class="flex_center">
-          <div class="the_clock">
-            <p class="brief">Asia/Shanghai</p>
+          <section>
+            <h5>Shanghai:</h5>
             <span class="dt"
-              ><rz-datetime tz="Asia/Shanghai"></rz-datetime
+              ><rz-datetime tz="Asia/Shanghai" format="cn-CN"></rz-datetime
             ></span>
-          </div>
+            <br />
+            <span class="coding">
+              <code>
+                <pre>
+&lt;rz-datetime
+  tz="Asia/Shanghai"
+  format="cn-CN"
+  fulldatetime="yes"
+  show_tz_pre="no";
+  show_tz_post="no";
+  show_tz_top="no"
+&gt;
+&lt;rz-datetime/&gt;</pre
+                >
+              </code>
+            </span>
+          </section>
           <br />
-          <div class="the_clock">
-            <p class="brief">Europe/Berlin</p>
-            <span class="dt"
-              ><rz-datetime tz="Europe/Berlin" format="de-DE"></rz-datetime
-            ></span>
-          </div>
+          <section>
+            <h5>Berlin:</h5>
+            <span class="dt"><rz-datetime></rz-datetime></span>
+            <br />
+            <span class="coding">
+              <code>
+                <pre>
+&lt;rz-datetime&gt;
+&lt;rz-datetime/&gt;</pre
+                >
+              </code>
+            </span>
+          </section>
           <br />
-          <div class="the_clock">
-            <p class="brief">Africa/Johannesburg</p>
+          <section>
+            <h5>Johannesburg:</h5>
             <span class="dt"
               ><rz-datetime
                 tz="Africa/Johannesburg"
                 format="en-GB"
               ></rz-datetime
             ></span>
-          </div>
+            <br />
+            <span class="coding">
+              <code>
+                <pre>
+&lt;rz-datetime
+  tz="Africa/Johannesburg"
+  format="en-GB"
+&gt;
+&lt;rz-datetime/&gt;</pre
+                >
+              </code>
+            </span>
+          </section>
           <br />
-          <div class="the_clock">
-            <p class="brief">Europe/Moscow</p>
+          <section>
+            <h5>Moscow:</h5>
             <span class="dt"
-              ><rz-datetime tz="Europe/Moscow" format="ru-RU"></rz-datetime
+              ><rz-datetime
+                tz="Europe/Moscow"
+                format="en-US"
+                show_tz_pre="yes"
+              ></rz-datetime
             ></span>
-          </div>
+            <br />
+            <span class="coding">
+              <code>
+                <pre>
+&lt;rz-datetime
+  tz="Europe/Moscow"
+  format="en-US"
+  show_tz_pre="yes"
+&gt;
+&lt;rz-datetime/&gt;</pre
+                >
+              </code>
+            </span>
+          </section>
+          <br />
+          <section>
+            <h5>Greenland:</h5>
+            <span class="dt"
+              ><rz-datetime
+                tz="America/Nuuk"
+                format="kl-GL"
+                show_tz_post="yes"
+              ></rz-datetime
+            ></span>
+            <br />
+            <span class="coding">
+              <code>
+                <pre>
+&lt;rz-datetime
+  tz="America/Nuuk"
+  format="kl-GL"
+  show_tz_post="yes"
+&gt;
+&lt;rz-datetime/&gt;</pre
+                >
+              </code>
+            </span>
+          </section>
+          <br />
+          <section>
+            <h5>Tokyo:</h5>
+            <span class="dt"
+              ><rz-datetime
+                tz="Asia/Tokyo"
+                format="jp-JP"
+                show_tz_top="yes"
+              ></rz-datetime
+            ></span>
+            <br />
+            <span class="coding">
+              <code>
+                <pre>
+&lt;rz-datetime
+  tz="Asia/Tokyo"
+  format="jp-JP"
+  show_tz_top="yes"
+&gt;
+&lt;rz-datetime/&gt;</pre
+                >
+              </code>
+            </span>
+          </section>
         </div>
       </div>
     </main>
 
-    <rz-footer url_right="/dist/legal.html"></rz-footer>
+    <rz-footer
+      url_left="https://www.robert.hase-zheng.net/contact"
+      url_middle="https://github.com/Zheng-Bote"
+      url_right="legal.html"
+    ></rz-footer>
 
-    <script>
-      const myChannel = new BroadcastChannel("language_channel");
-      myChannel.onmessage = function (event) {
-        console.log("myChannel.onmessage = ", event.data);
-        setLocale(event.data);
-      };
-    </script>
+    <script></script>
 
     <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
   </body>

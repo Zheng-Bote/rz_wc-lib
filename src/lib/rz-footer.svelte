@@ -26,7 +26,7 @@ function getYearString() {
 
 </script>
 
-<span class="distance"></span>
+<div class="distance"></div>
 <footer id="footer">
   <div class="footer-item-left" id="footer_item_left">
         <a href="{url_left}" title="{url_left_title}" >
@@ -62,6 +62,7 @@ function getYearString() {
 <style>
   .distance {
     margin-top: 20px;
+    padding-top: 20px;
   }  
   
   footer{
@@ -72,8 +73,9 @@ function getYearString() {
     width: 100%;
     height: 25px;
 
-  background-color: var(--background-color-footer);
-  color: var(--font-color-footer);
+    background-color: var(--background-color-footer);
+    border-top: var(--border-width) var(--border-style) var(--border-color-footer);
+    color: var(--font-color-footer);
 
     /*padding: 5px;*/
     font-size: var(--font-size-small);

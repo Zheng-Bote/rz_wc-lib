@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="http://127.0.0.1:5500/dist/" />
+    <base href="http://127.0.0.1:5501/dist/" />
 
     <title>rz-button-top</title>
 
-    <meta name="description" content="template for HTML5" />
-    <meta name="version" content="v0.1.0" />
+    <meta name="description" content="web-component for navigation" />
+    <meta name="version" content="v1.0.0" />
     <meta name="author" content="ZHENG Robert" />
-    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <meta name="date" content="2024-04-13T01:30:00+01:00" />
     <!--
     <meta name="theme-color" content="#eef2f3" />
     <meta
@@ -38,7 +38,6 @@
     <script type="module" src="/dist/assets/rz-header.js"></script>
     <script type="module" src="/dist/assets/rz-breadcrumbs.js"></script>
     <script type="module" src="/dist/assets/rz-button-top.js"></script>
-    <script type="module" src="/dist/assets/rz-cookie-alert.js"></script>
     <script type="module" src="/dist/assets/rz-footer.js"></script>
     <script type="module" src="assets/rz-navmenu.js"></script>
 
@@ -55,7 +54,7 @@
     </style>
   </head>
   <body>
-    <rz-header></rz-header>
+    <rz-header brand_title="rz-wc-libs"></rz-header>
     <rz-breadcrumbs></rz-breadcrumbs>
 
     <span id="top"></span>
@@ -76,11 +75,11 @@
         </span>
       </aside>
       <div class="content">
-        <h1>web-components</h1>
+        <h1 data-i18n-key="Web-Components">web-components</h1>
         <p><br /></p>
 
         <h2>rz-button-top</h2>
-        <p>
+        <p data-i18n-key="btn-top_desc">
           If id="top" will be out of viewport, a button is visible on the right
           bottom corner with "&uArr;&nbsp;top" to goto position with id="top".
         </p>
@@ -88,14 +87,14 @@
 
         <h3>Syntax</h3>
         <span class="coding">
-          Within HTML header:
+          <span data-i18n-key="Within_html_header">Within HTML header</span>:
           <code>
             <pre>
 &lt;script type="module" src="/assets/rz-button-top.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
-          Within HTML body:
+          <span data-i18n-key="Within_html_body">Within HTML body</span>:
           <code>
             <pre>
 &lt;span id="top"&gt;&lt;/span&gt;
@@ -105,7 +104,7 @@
             >
           </code>
 
-          <h4>default</h4>
+          <h4 data-i18n-key="Default_Value">default</h4>
           <code>
             <pre>
 &lt;rz-button-top&gt;
@@ -114,13 +113,13 @@
           </code>
         </span>
 
-        <h3>Attributes</h3>
+        <h3 data-i18n-key="Attributes">Attributes</h3>
 
         <table>
           <tr>
-            <th>attribute</th>
-            <th>value</th>
-            <th>description</th>
+            <th data-i18n-key="Attribute">attribute</th>
+            <th data-i18n-key="Value">value</th>
+            <th data-i18n-key="Description">description</th>
           </tr>
           <tr>
             <td>-/-</td>
@@ -132,8 +131,10 @@
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>Examples</h5>
-        <p class="txt">long text</p>
+        <h5 data-i18n-key="Examples">Examples</h5>
+        <br />
+        <p class="brief" data-i18n-key="long_text">long text</p>
+        <br />
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -225,20 +226,16 @@
           veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
           ut aliquip ex ea commodo
         </p>
-        <p><br /></p>
-        <div class="flex_center">some text</div>
       </div>
     </main>
 
-    <rz-footer url_right="/dist/legal.html"></rz-footer>
+    <rz-footer
+      url_left="https://www.robert.hase-zheng.net/contact"
+      url_middle="https://github.com/Zheng-Bote"
+      url_right="legal.html"
+    ></rz-footer>
 
-    <script>
-      const myChannel = new BroadcastChannel("language_channel");
-      myChannel.onmessage = function (event) {
-        console.log("myChannel.onmessage = ", event.data);
-        setLocale(event.data);
-      };
-    </script>
+    <script></script>
 
     <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
   </body>

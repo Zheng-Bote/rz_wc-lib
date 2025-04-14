@@ -98,24 +98,29 @@ let light_txt:string = light_txt_en;
         src={icon}
         alt="{dark_txt}|{light_txt}"
         title="{dark_txt}|{light_txt}"
-        width="15px"
-        height="auto"
         id="darkM"
-        decoding="auto"
       />
 </button>
 </div>
 
 <style>
-  button {
-    width:35px;
-    height:35px;
-    background-color: var(--transparency);
-    border: none;
-  }
-  button:hover {
-    border: var(--border-width) var(--border-style) var(--border-color);
-    border-radius: var(--border-radius);
-    cursor: pointer;
+  @scope(.rz_theme){
+    button {
+      width:35px;
+      height:35px;
+      background-color: var(--transparency);
+      border: none;
+    }
+    button:hover {
+      border: var(--border-width) var(--border-style) var(--border-color);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+    }
+    img {
+      width: 15px;
+      height: auto;  
+      decoding: auto;
+      vertical-align: middle;
+    }
   }
 </style>

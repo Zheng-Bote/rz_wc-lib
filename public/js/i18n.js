@@ -1,7 +1,19 @@
+window.onload = start;
+
 const defaultLocale = "en";
 const secondLocale = "de";
 let locale = "";
 let translations = "";
+
+function start() {
+  language = localStorage.getItem("language") || defaultLocale;
+  setLocale(language);
+  const myChannel = new BroadcastChannel("language_channel");
+  myChannel.onmessage = function (event) {
+    console.log("myChannel.onmessage = ", event.data);
+    setLocale(event.data);
+  };
+}
 
 async function setLocale(newLocale) {
   if (newLocale === locale) {
@@ -14,7 +26,7 @@ async function setLocale(newLocale) {
 }
 
 async function fetchTranslationsFor(newLocale) {
-  const response = await fetch(`/i18n/${newLocale}.json`);
+  const response = await fetch(`i18n/${newLocale}.json`);
   return await response.json();
 }
 

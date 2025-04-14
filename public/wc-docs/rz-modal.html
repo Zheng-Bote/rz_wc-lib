@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="http://127.0.0.1:5500/dist/" />
+    <base href="http://127.0.0.1:5501/dist/" />
 
     <title>rz-modal</title>
 
-    <meta name="description" content="template for HTML5" />
-    <meta name="version" content="v0.1.0" />
+    <meta
+      name="description"
+      content="web-component for modal window messages"
+    />
+    <meta name="version" content="v1.0.0" />
     <meta name="author" content="ZHENG Robert" />
-    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <meta name="date" content="2025-04-13T01:30:00+01:00" />
     <!--
     <meta name="theme-color" content="#eef2f3" />
     <meta
@@ -43,21 +46,21 @@
     <script type="module" src="/dist/assets/rz-modal.js"></script>
     <script type="module" src="/dist/assets/rz-navmenu.js"></script>
 
-    <script&gt; src="/dist/js/i18n.js"></script>
+    <script src="/dist/js/i18n.js"></script>
 
     <style>
-      @scope (.modal-btn){
+      @scope (.modal-btn) {
         display: flex;
         flex-direction: column;
         align-items: center;
         button {
-            width:50px;
-            height:35px;
-            background-color: var(--transparency);
-            border: var(--border-width) var(--border-style) var(--border-color);
-            border-radius: var(--border-radius);
-            display: block;
-            margin: var(--base-padding) 0 var(--base-padding) 0;
+          width: 50px;
+          height: 35px;
+          background-color: var(--transparency);
+          border: var(--border-width) var(--border-style) var(--border-color);
+          border-radius: var(--border-radius);
+          display: block;
+          margin: var(--base-padding) 0 var(--base-padding) 0;
         }
         button:not(.active):hover {
           background-color: var(--secondary-color);
@@ -75,7 +78,7 @@
     </style>
   </head>
   <body>
-    <rz-header></rz-header>
+    <rz-header brand_title="rz-wc-libs"></rz-header>
     <rz-breadcrumbs></rz-breadcrumbs>
 
     <span id="top"></span>
@@ -100,24 +103,26 @@
         <p><br /></p>
 
         <h2>rz-modal</h2>
-        <p></p>
+        <p data-i18n-key="rz-modal_desc">Modal window</p>
         <br />
 
         <h3>Syntax</h3>
         <span class="coding">
-          Within HTML header:
+          <span data-i18n-key="Within_html_header">Within HTML header</span>:
           <code>
             <pre>
 &lt;script type="module" src="/assets/rz-modal.js"&gt;&lt;/script&gt;</pre
             >
           </code>
           <br />
-          Within HTML body:
+          <span data-i18n-key="Within_html_body">Within HTML body</span>:
           <code>
-            <pre>&lt;rz-modal id="rzmodal" attribute="value" &gt; &lt;rz-modal/&gt;</pre>
+            <pre>
+&lt;rz-modal id="rzmodal" attribute="value"&gt; &lt;rz-modal/&gt;</pre
+            >
           </code>
 
-          <h4>default</h4>
+          <h4 data-i18n-key="Default_Value">default</h4>
           <code>
             <pre>
 &lt;rz-modal
@@ -132,13 +137,13 @@
           </code>
         </span>
 
-        <h3>Attributes</h3>
+        <h3 data-i18n-key="Attributes">Attributes</h3>
 
         <table>
           <tr>
-            <th>attribute</th>
-            <th>value</th>
-            <th>description</th>
+            <th data-i18n-key="Attribute">attribute</th>
+            <th data-i18n-key="Value">value</th>
+            <th data-i18n-key="Description">description</th>
           </tr>
           <tr>
             <td>title</td>
@@ -161,9 +166,9 @@
             <td>optional, color of the modal window</td>
           </tr>
         </table>
-        <p><br></p>
-        <h3>Usage</h3>
-        <p>Example usage</p>
+        <p><br /></p>
+        <h3 data-i18n-key="Usage">Usage</h3>
+        <h5 data-i18n-key="Example">Example</h5>
         <span class="coding">
           <code>
             <pre>
@@ -217,8 +222,8 @@
       </div>
       <div class="aside_right">
         <p><br /></p>
-        <h5>Examples</h5>
-        <p><br></p>
+        <h5 data-i18n-key="Examples">Examples</h5>
+        <p><br /></p>
         <p><rz-modal id="rzmodal"></rz-modal></p>
         <span class="modal-btn">
           <p><button onclick="showInfo()">Info</button></p>
@@ -229,15 +234,13 @@
       </div>
     </main>
 
-    <rz-footer url_right="/dist/legal.html"></rz-footer>
+    <rz-footer
+      url_left="https://www.robert.hase-zheng.net/contact"
+      url_middle="https://github.com/Zheng-Bote"
+      url_right="legal.html"
+    ></rz-footer>
 
     <script>
-      const myChannel = new BroadcastChannel("language_channel");
-      myChannel.onmessage = function (event) {
-        console.log("myChannel.onmessage = ", event.data);
-        setLocale(event.data);
-      };
-
       function showInfo() {
         const modal = document.getElementById("rzmodal");
         if (modal) {

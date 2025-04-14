@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="http://127.0.0.1:5500/dist/" />
+    <base href="http://127.0.0.1:5501/dist/" />
 
     <title>rz-wc-lib</title>
 
-    <meta name="description" content="template for HTML5" />
-    <meta name="version" content="v0.1.0" />
+    <meta name="description" content="we-component library, based on Svelte" />
+    <meta name="version" content="v1.0.0" />
     <meta name="author" content="ZHENG Robert" />
-    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+    <meta name="date" content="2025-04-13T01:30:00+01:00" />
     <!--
     <meta name="theme-color" content="#eef2f3" />
     <meta
@@ -46,7 +46,7 @@
     <script src="/dist/js/i18n.js"></script>
   </head>
   <body>
-    <rz-header></rz-header>
+    <rz-header brand_title="rz-wc-libs"></rz-header>
     <rz-breadcrumbs></rz-breadcrumbs>
 
     <span id="top"></span>
@@ -59,38 +59,59 @@
       <aside>
         <p><br /></p>
         <span class="aside_nav">
-          <h5>Navigation</h5>
-          <br />
-          <p><a href="wc-docs/rz-breadcrumbs.html">Breadcrumbs</a></p>
-          <p><a href="wc-docs/rz-datetime.html">Clocks</a></p>
-          <p><a href="wc-docs/rz-fontsize.html">Fontsize</a></p>
-          <p><a href="wc-docs/rz-footer.html">Footer</a></p>
-          <p><a href="wc-docs/rz-header.html">Header</a></p>
-          <p><a href="wc-docs/rz-language.html">Languages</a></p>
-          <p><a href="wc-docs/rz-loginform.html">Login</a></p>
-          <p><a href="wc-docs/rz-modal.html">Modal</a></p>
-          <p><a href="wc-docs/rz-theme.html">Themes</a></p>
+          <h5>Menu</h5>
+          <rz-navmenu
+            current_id="main"
+            json_url="/dist/rz-navmenu.json"
+          ></rz-navmenu>
         </span>
       </aside>
       <div class="content">
-        <h1>Web-Components</h1>
+        <h1 data-i18n-key="Web-Components">Web-Components</h1>
+
+        <p data-i18n-key="web-components_desc">
+          Web Components is a suite of different technologies allowing you to
+          create reusable custom elements — with their functionality
+          encapsulated away from the rest of your code — and utilize them in
+          your web apps.
+        </p>
+        <span class="brief" data-i18n-key="Source">Source:</span>&nbsp;<span
+          class="brief_txt"
+          ><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+            title="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+            >MDN Docs</a
+          ></span
+        >
+
+        <p><br /></p>
+        <p class="txt-center">
+          <span data-i18n-key="source_code_of_wz-lib"
+            >Source code of this Web-Components library can be found here</span
+          >:&nbsp;
+          <a
+            href="https://github.com/Zheng-Bote/rz_wc-lib"
+            title="https://github.com/Zheng-Bote/rz_wc-lib"
+            >https://github.com/Zheng-Bote/rz_wc-lib</a
+          >
+        </p>
       </div>
       <div class="aside_right">
         <p><br /></p>
         <h5>&nbsp;</h5>
-        <p class="brief"><rz-datetime></rz-datetime></p>
+        <span class="txt-right">
+          <p class="brief"><rz-datetime></rz-datetime></p>
+        </span>
       </div>
     </main>
 
-    <rz-footer url_right="/dist/legal.html"></rz-footer>
+    <rz-footer
+      url_left="https://www.robert.hase-zheng.net/contact"
+      url_middle="https://github.com/Zheng-Bote"
+      url_right="legal.html"
+    ></rz-footer>
 
-    <script>
-      const myChannel = new BroadcastChannel("language_channel");
-      myChannel.onmessage = function (event) {
-        console.log("myChannel.onmessage = ", event.data);
-        setLocale(event.data);
-      };
-    </script>
+    <script></script>
 
     <script type="module" src="/dist/assets/rz-button-top.js" defer></script>
   </body>

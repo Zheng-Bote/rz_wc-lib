@@ -53,8 +53,9 @@ export let current_id:string = "main";
     background-color: var(--transparency);
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
-    display: block;
-    margin: var(--base-padding) 0 var(--base-padding) 0;
+    /*display: block;*/
+    /*margin: var(--base-padding) 0 var(--base-padding) 0;*/
+    margin:var(--base-padding);
   }
   button:not(.active):hover {
     background-color: var(--secondary-color);
@@ -68,5 +69,13 @@ export let current_id:string = "main";
     /*text-shadow: 2px 2px rgba(0, 0, 0, 0.3); */
     font-weight: bold;
   }
+
+  @media screen and (min-width: 1024px) {
+  button {
+    display: block;
+    margin: var(--base-padding) 0 var(--base-padding) 0;
+  }
+}
+
 }
 </style>
