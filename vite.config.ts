@@ -22,6 +22,7 @@ export default defineConfig({
         "src/lib/rz-button-top.svelte",
         "src/lib/rz-loginform.svelte",
         "src/lib/rz-navmenu.svelte",
+        "src/lib/rz-imagecard.svelte",
       ],
       output: {
         chunkFileNames: "assets/[name].js",

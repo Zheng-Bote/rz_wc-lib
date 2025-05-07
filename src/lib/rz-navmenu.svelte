@@ -36,9 +36,19 @@ export let current_id:string = "main";
 <div class="rz-navmenu">
   {#each menuData as item}
     {#if current_id === item.id}
-      <button id="{item.id}" class="active">{item.name}</button> 
+      <button id="{item.id}" class="active">
+        {#if item.icon !== ""}
+          <img src="{item.icon}" alt="{item.name}" />
+        {/if}
+        {item.name}
+      </button> 
     {:else}
-      <button id="{item.id}" onclick={() => goTo(`${item.link}`)}>{item.name}</button> 
+      <button id="{item.id}" onclick={() => goTo(`${item.link}`)}>
+        {#if item.icon !== ""}
+          <img src="{item.icon}" alt="{item.name}" />
+        {/if}
+        {item.name}
+      </button> 
     {/if}
   {/each}
 </div>
@@ -50,7 +60,7 @@ export let current_id:string = "main";
  button {
     width:100px;
     height:35px;
-    background-color: var(--transparency);
+    background-color: var(--transparency-light);
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
     /*display: block;*/
@@ -68,6 +78,12 @@ export let current_id:string = "main";
     background-color: var(--secondary-color);
     /*text-shadow: 2px 2px rgba(0, 0, 0, 0.3); */
     font-weight: bold;
+  }
+  img {
+    width: 15px;
+    height: auto;  
+    decoding: auto;
+    vertical-align: middle;
   }
 
   @media screen and (min-width: 1024px) {

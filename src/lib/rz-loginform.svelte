@@ -3,7 +3,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let login_url: string = 'http://localhost:8080/get_json';
+  export let login_url: string = 'http://localhost:8080/login';
   let csrf_cookie: string = 'csrf_cookie';
   let csrfCookie: any;
   let csrfInput:any;
@@ -101,7 +101,7 @@
     }
 
 
-    console.info(`username -${username}- pwd -${password}- cookie -${csrfCookie}-`);
+    console.info(`email -${username}- pwd -${password}- token -${csrfCookie}-`);
     isLoading = true;
 
     if(csrfCookie === "" || csrfCookie === "undefined") {
@@ -109,7 +109,7 @@
       console.info("csrfCookie 0: ", csrfCookie);
     }
 
-    const data = {user: username, "pwd": password, "token": csrfCookie};
+    const data = {email: username, "pwd": password};
     const jsonData =   JSON.stringify(data);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -228,7 +228,7 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 10px;;
+    padding: 10px;
     border: var(--border-width) var(--border-style) var(--border-color);
     border-radius: var(--border-radius);
   }
