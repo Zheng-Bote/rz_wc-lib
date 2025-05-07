@@ -14,39 +14,21 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 **Table of Contents**
 
 - [Description](#description)
   - [Features](#features)
-  - [Status](#status)
-    - [Application / Tool](#application--tool)
-    - [Documentation](#documentation)
-      - [README](#readme)
-      - [other Markdown files](#other-markdown-files)
-- [Installation](#installation)
-  - [Dependencies](#dependencies)
-  - [folder structure](#folder-structure)
-  - [Usage/Examples/Tests](#usageexamplestests)
-- [API Reference](#api-reference)
-  - [Inputs](#inputs)
-  - [Outputs](#outputs)
-  - [Parameters](#parameters)
-- [Documentation](#documentation-1)
-  - [Architecture](#architecture)
-    - [Github](#github)
-      - [Github Repo](#github-repo)
-      - [Github Actions / Workflows](#github-actions--workflows)
-  - [Application](#application)
-  - [DevOps](#devops)
-  - [Github Page](#github-page)
-  - [Github Wiki](#github-wiki)
-  - [Comments](#comments)
-  - [Screenshots](#screenshots)
+    - [Web Components](#web-components)
+- [Status](#status)
+- [Documentation](#documentation)
+  - [Usage](#usage)
+    - [Declaration of Web-Component](#declaration-of-web-component)
+    - [Initialization of Web-Component](#initialization-of-web-component)
+  - [Development](#development)
+    - [Dependencies](#dependencies)
+    - [folder structure](#folder-structure)
 - [Authors and License](#authors-and-license)
   - [License](#license)
-    - [MIT License](#mit-license)
-    - [Apache License](#apache-license)
   - [Authors](#authors)
     - [Code Contributors](#code-contributors)
 
@@ -147,7 +129,6 @@ initalizize the web-component, in some cases with optional attribute=value
 ### folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -266,7 +247,6 @@ initalizize the web-component, in some cases with optional attribute=value
 
 16 directories, 98 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
