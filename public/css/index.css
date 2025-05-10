@@ -39,6 +39,16 @@
   --border-width: 1px;
   --border-radius: 5px;
 
+  --card-border-color: light-dark(#6f8ab7, #89bbfe);
+  --card-border-style: solid;
+  --card-border-width: 1px;
+  --card-border-radius: 12px;
+
+  --card-font-color: oklch(0.87 0.148144 202.8754);
+  --card-background-color: oklch(0 0 0 / 20%);
+  --card-figcaption-font-color: oklch(0.87 0.148144 202.8754);
+  --card-figcaption-background-color: oklch(0 0 0 / 3%);
+
   --primary-color: lightblue;
   --secondary-color: #89bbfe;
 

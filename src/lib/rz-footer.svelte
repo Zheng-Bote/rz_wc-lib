@@ -24,11 +24,15 @@ function getYearString() {
     return years;
   }
 
+  function goTo(link:string = "") {
+    window.location.href=`${link}`;
+  }
+
 </script>
 
 <div class="distance"></div>
 <footer id="footer">
-  <div class="footer-item-left" id="footer_item_left">
+  <div class="footer-item-left" id="footer_item_left" onclick={() => goTo(`${url_left}`)} aria-hidden="true">
         <a href="{url_left}" title="{url_left_title}" >
           <img
             src="img/icons/mail-open-outline.svg"
@@ -39,12 +43,12 @@ function getYearString() {
           {url_left_title}
         </a>
       </div>
-      <div class="footer-item-middle" id="footer_item_middle">
+      <div class="footer-item-middle" id="footer_item_middle" onclick={() => goTo(`${url_middle}`)} aria-hidden="true">
         <a href="{url_middle}" title="{url_middle_title}">
         &copy; {getYearString()} {name} v{version}
         </a>
         </div>
-      <div class="footer-item-right" id="footer_item_right">
+      <div class="footer-item-right" id="footer_item_right" onclick={() => goTo(`${url_right}`)} aria-hidden="true">
         <a href="{url_right}" title="{url_right_title}">
           <img
             src="img/icons/information-outline.svg"
@@ -95,6 +99,9 @@ function getYearString() {
       text-decoration-style: solid;
       /* text-decoration-thickness: 0.1em; */
       text-decoration-color: light-dark(blue, lightblue);
+
+      color: black;
+      font-weight: bold;
     }
 
     & img {
@@ -119,6 +126,13 @@ function getYearString() {
     & .footer-item-right {
       grid-area: right;
 
+    }
+
+    & .footer-item-left:hover,.footer-item-middle:hover, .footer-item-right:hover {
+       cursor: pointer;
+       background-color: var(--secondary-color);
+       color:black;
+       font-weight: bold;
     }
   }
 
