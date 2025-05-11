@@ -228,7 +228,9 @@ initalizize the web-component, in some cases with optional attribute=value
 │   │   ├── rz-datetime.svelte
 │   │   ├── rz-fontsize.svelte
 │   │   ├── rz-footer.svelte
+│   │   ├── rz-gallery.svelte
 │   │   ├── rz-header.svelte
+│   │   ├── rz-imagecard.svelte
 │   │   ├── rz-imprint.svelte
 │   │   ├── rz-language.svelte
 │   │   ├── rz-loginform.svelte
@@ -245,7 +247,7 @@ initalizize the web-component, in some cases with optional attribute=value
 ├── tsconfig.node.json
 └── vite.config.ts
 
-16 directories, 98 files
+16 directories, 100 files
 ```
 <!-- readme-tree end -->
 
