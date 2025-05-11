@@ -10,8 +10,9 @@
   import RzButtonTop from './lib/rz-button-top.svelte';
   import RzLoginForm from './lib/rz-loginform.svelte';
   import RzNavmenu from './lib/rz-navmenu.svelte';
-
   import RzImagecard from './lib/rz-imagecard.svelte';
+
+import RzGallery from './lib/rz-gallery.svelte';
   
   
   
@@ -33,9 +34,83 @@
 <div class="content">
 
   <h2>Navmenu</h2>
-  <RzNavmenu current_id="main"></RzNavmenu>
+</div>
+
+<p><br></p>
+<div class="rz-img-gallery">
+  <RzGallery
+    img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"
+    title="Katze"
+    desc="Beschreibung"
+  >
+  </RzGallery>
+
+ <RzGallery
+    img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg"
+    title="Katze"
+    desc="Beschreibung"
+ >
+ </RzGallery>
+
+ <RzGallery
+ img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg"
+ title="Katze"
+ desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
+
+<RzGallery
+img="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg"
+title="Katze"
+desc="Beschreibung"
+>
+</RzGallery>
 
 </div>
+
+<p><br></p>
 
 <hr>
 <ul class="imagecards">
